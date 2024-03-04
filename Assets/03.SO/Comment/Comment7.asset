@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb390ed39abff7448bcc73d974acc1a, type: 3}
+  m_Name: Comment7
+  m_EditorClassIdentifier: 
+  texts:
+  - name: '-'
+    value: "\uD480\uC18D\uC5D0 \uBB34\uC5B8\uAC00 \uBE5B\uB098\uB294 \uBB3C\uAC74\uC774
+      \uBCF4\uC778\uB2E4."
+    eventIdx: 0
+  - name: '-'
+    value: "\uC774\uBC88\uC5D4 \uC81C\uBC1C!"
+    eventIdx: 0
+  - name: '-'
+    value: "......\uBB50\uC57C. \uC774\uAC74 \uB610!"
+    eventIdx: 0
+  - name: '-'
+    value: "\uC660 \uBC30\uD130\uB9AC\uAC00 \uC774\uB7F0 \uACF3\uC5D0\uC11C \uBC18\uC9DD\uAC70\uB9AC\uACE0
+      \uC788\uC5C8\uB2E4. \uB3C4\uB300\uCCB4 \uC65C?"
+    eventIdx: 0
+  - name: '-'
+    value: "\uB3C4\uB300\uCCB4 \uC5B4\uB514 \uC788\uB294 \uAC70\uC57C!"
+    eventIdx: 0
+  - name: '-'
+    value: "\uAD1C\uD788 \uC774\uB7F0 \uC77C \uD55C\uB2E4\uACE0 \uD588\uB098.....?"
+    eventIdx: 0
+  - name: '-'
+    value: "\uC2AC\uC2AC \uCC3E\uAE30 \uADC0\uCC2E\uC544\uC9C0\uB294\uB370......"
+    eventIdx: 0
+  - name: '-'
+    value: "\uC5B4?"
+    eventIdx: 0
+  - name: '-'
+    value: "\uC0AC\uB78C\uC774\uB2E4."
+    eventIdx: 0
+  - name: '-'
+    value: "\uC800 \uC0AC\uB78C\uD55C\uD14C\uB77C\uB3C4 \uBB3C\uC5B4\uBCFC\uAE4C?"
+    eventIdx: 0
+  - name: '-'
+    value: "\uD3EC\uCC29\uC744 \uC0AC\uB78C\uC5D0\uAC8C \uC0AC\uC6A9\uD558\uBA74
+      \uB300\uD654\uB97C \uD560 \uC218 \uC788\uC744 \uAC83\uC774\uB2E4."
+    eventIdx: 0
+  generalIdx: 7
+  pointOutIdx: 2147483646
+  destinationIdx: 2147483646

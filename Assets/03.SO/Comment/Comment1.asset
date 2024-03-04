@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb390ed39abff7448bcc73d974acc1a, type: 3}
+  m_Name: Comment1
+  m_EditorClassIdentifier: 
+  texts:
+  - name: '-'
+    value: "......\uC88B\uC544. \uD55C \uBC88 \uAC00\uBCF4\uC790."
+    eventIdx: 0
+  - name: '-'
+    value: "\uC5EC\uAE30 \uADFC\uCC98\uB77C\uB294\uB370. \uD55C \uBC88 \uC9C0\uB3C4\uB97C
+      \uC5F4\uC5B4 \uD655\uC778\uD574\uBCF4\uC790."
+    eventIdx: 0
+  generalIdx: 1
+  pointOutIdx: 2147483646
+  destinationIdx: 2147483646
