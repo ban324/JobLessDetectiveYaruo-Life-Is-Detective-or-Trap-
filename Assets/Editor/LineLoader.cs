@@ -1,13 +1,9 @@
 using System;
-using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
-using UnityEditor.AnimatedValues;
 using UnityEngine;
 using UnityEngine.Networking;
-using static UnityEngine.UI.CanvasScaler;
 
 public class LineLoader : EditorWindow
 {
@@ -121,7 +117,7 @@ public class TextLoader : MonoBehaviour
             AssetDatabase.CreateAsset(commentSO, $"Assets/03.SO/Comment/Comment{commentSO.generalIdx}.asset");
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
-            Debug.Log(scriptCnt);
+            Debug.Log(cnt);
             cnt++;
         }
     }

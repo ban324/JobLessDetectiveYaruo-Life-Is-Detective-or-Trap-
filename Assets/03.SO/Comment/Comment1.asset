@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Comment1
   m_EditorClassIdentifier: 
   texts:
-  - name: '-'
+  - name: "\uC8FC\uC778\uACF5"
     value: "......\uC88B\uC544. \uD55C \uBC88 \uAC00\uBCF4\uC790."
     eventIdx: 0
-  - name: '-'
+  - name: "\uC8FC\uC778\uACF5"
     value: "\uC5EC\uAE30 \uADFC\uCC98\uB77C\uB294\uB370. \uD55C \uBC88 \uC9C0\uB3C4\uB97C
-      \uC5F4\uC5B4 \uD655\uC778\uD574\uBCF4\uC790."
+      \uD655\uC778\uD574 \uBD10\uC57C\uACA0\uB2E4."
     eventIdx: 0
   generalIdx: 1
   pointOutIdx: 2147483646
