@@ -14,12 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: "\uC8FC\uC778\uACF5"
-    value: "......\uC88B\uC544. \uD55C \uBC88 \uAC00\uBCF4\uC790."
-    eventIdx: 0
+    value: "......\uC88B\uC544. \uD55C \uBC88 \uAC00\uBCF4\uC790.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   - name: "\uC8FC\uC778\uACF5"
     value: "\uC5EC\uAE30 \uADFC\uCC98\uB77C\uB294\uB370. \uD55C \uBC88 \uC9C0\uB3C4\uB97C
-      \uD655\uC778\uD574 \uBD10\uC57C\uACA0\uB2E4."
-    eventIdx: 0
+      \uD655\uC778\uD574 \uBD10\uC57C\uACA0\uB2E4.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   generalIdx: 1
   pointOutIdx: 2147483646
   destinationIdx: 2147483646

@@ -14,22 +14,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: "\uC8FC\uC778\uACF5"
-    value: "\uC800. \uC800\uAE30."
-    eventIdx: 0
+    value: "\uC800-\uC800\uAE30.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
-    value: "\uC65C \uADF8\uB7EC\uC2DC\uC8E0?"
-    eventIdx: 0
+    value: "\uC65C \uADF8\uB7EC\uC2DC\uC8E0?\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   - name: "\uC8FC\uC778\uACF5"
-    value: "\uBB3C\uAC74\uC744 \uD558\uB098 \uCC3E\uACE0 \uC788\uC2B5\uB2C8\uB2E4."
-    eventIdx: 0
+    value: "\uBB3C\uAC74\uC744 \uD558\uB098 \uCC3E\uACE0 \uC788\uC5B4\uC694.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
-    value: "\uC5B4\uB5A4 \uBB3C\uAC74\uC778\uC9C0?"
-    eventIdx: 0
+    value: "\uC74C...... \uC5B4\uB5A4 \uBB3C\uAC74\uC778\uC9C0?\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   - name: "\uC8FC\uC778\uACF5"
-    value: "\uAC00\uC6B4\uB370\uC5D0 \uD478\uB978 \uBCF4\uC11D\uC774 \uBC15\uD78C
-      \uBAA9\uAC78\uC774\uC785\uB2C8\uB2E4. \uC774 \uC8FC\uBCC0\uC5D0\uC11C \uC783\uC5B4\uBC84\uB9B0
-      \uAC83 \uAC19\uC544\uC11C\uC694."
-    eventIdx: 0
+    value: "\uAC00\uC6B4\uB370\uC5D0 \uBCC4 \uBAA8\uC591 \uC7A5\uC2DD\uC774 \uB2EC\uB9B0
+      \uBAA9\uAC78\uC774\uC5D0\uC694. \uC774 \uC8FC\uBCC0\uC5D0\uC11C \uC783\uC5B4\uBC84\uB9B0
+      \uAC83 \uAC19\uC544\uC11C\uC694.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
+    value: "\uC5B4\uB5BB\uAC8C \uC0DD\uACBC\uC8E0?\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uC544. \uC0AC\uC9C4\uC774 \uC788\uC5B4\uC694. \uC7A0\uC2DC\uB9CC\uC694......\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   generalIdx: 8
   pointOutIdx: 2147483646
   destinationIdx: 2147483646

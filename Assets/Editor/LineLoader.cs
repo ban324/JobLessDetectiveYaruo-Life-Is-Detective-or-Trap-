@@ -74,7 +74,7 @@ public class TextLoader : MonoBehaviour
             commentSO.destinationIdx = info[1] == "-" ? int.MaxValue -1 : int.Parse(info[2]);
             commentSO.texts = new List<CommentData>();
             idx++;
-            while (idx < strs.Length&&strs[idx] != "---,,")
+            while (idx < strs.Length&&strs[idx] != "---,,,,,")
             {
                 
                 try
@@ -82,26 +82,52 @@ public class TextLoader : MonoBehaviour
                     Debug.Log(strs[idx]);
 
                     CommentData data = new CommentData();
-                    string c = strs[idx].Split(',')[0];
+                    string[] spl = strs[idx].Split(",");
+                    string name = spl[0];
+                    //Debug.Log(name);
+                    string t = strs[idx].Remove(0, strs[idx].IndexOf(',')+1);
+                    t = t.Remove(t.LastIndexOf(','), t.Length - t.LastIndexOf(',')-1);
+                    t = t.Remove(t.LastIndexOf(','), t.Length - t.LastIndexOf(',')-1);
+                    t = t.Remove(t.LastIndexOf(','), t.Length - t.LastIndexOf(',')-1);
+                    t = t.Remove(t.LastIndexOf(','), t.Length - t.LastIndexOf(',')-1);
+                    string ev1 = spl[spl.Length - 2];
+                    string ev2 = spl[spl.Length - 1];
+                    string ev3 = spl[spl.Length - 1];
+                    string ev4 = spl[spl.Length - 1];
+                    
+                    string[] arr = { name, t ,ev1,ev2,ev3,ev4};
+                    string c = arr[0];
                     if(c=="---")
                     {
                         idx++;
                         break;
                     }
                     data.name = c;
-                    string v = strs[idx].Remove(0, strs[idx].IndexOf(',')+1);
-                    Debug.Log(v[v.Length - 2]);
-                    if (v[v.Length-2] != '-')
+                    data.value = arr[1];
+                    EventData evt = null;
+                    switch (ev1)
                     {
-                        data.eventIdx = int.Parse(v[v.Length - 2    ].ToString());
-                    }else
-                    {
-                        data.eventIdx = 0;
+                        case "0":
+                            evt= new EventData(TalkEventType.ImageSet, ev2);
+                        break;
+                        case "1":
+                            evt = new EventData(TalkEventType.GetItem, ev2);
+                        break;
+                        case "2":
+                            evt = new EventData(TalkEventType.PointOut, ev2);
+                        break;
+                        case "3":
+                            evt = new EventData(TalkEventType.Proposal, ev2,ev3,ev4);
+                        break;
+                        default:
+                            evt = new EventData(TalkEventType.Null, null);
+                            break;
                     }
-                    v = v.Remove(v.LastIndexOf(','), 3);
-                    data.value = v;
+                    data.evt = evt;
                     Debug.Log(data.name);
                     Debug.Log(data.value);
+
+
                     commentSO.texts.Add(data);
                     
                     idx++;
@@ -120,5 +146,6 @@ public class TextLoader : MonoBehaviour
             Debug.Log(cnt);
             cnt++;
         }
+        Debug.Log("성공적으로 성공");
     }
 }

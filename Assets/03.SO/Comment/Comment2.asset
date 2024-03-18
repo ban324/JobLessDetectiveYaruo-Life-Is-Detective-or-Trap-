@@ -15,12 +15,20 @@ MonoBehaviour:
   texts:
   - name: "\uC8FC\uC778\uACF5"
     value: "\uC774 \uC8FC\uBCC0\uC744 \uB098\uD0C0\uB0B4\uB294 \uD3B8\uB9AC\uD55C
-      \uC9C0\uB3C4\uB2E4."
-    eventIdx: 0
+      \uC9C0\uB3C4\uB2E4.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   - name: "\uC8FC\uC778\uACF5"
     value: "\uC544\uBB34\uB798\uB3C4 \uD0D0\uC815\uC0AC\uBB34\uC18C\uB294 \uC9D1
-      \uC544\uB7AB\uCABD\uC778\uAC00\uBCF4\uB2E4."
-    eventIdx: 0
+      \uC544\uB7AB\uCABD\uC778\uAC00\uBCF4\uB2E4.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   generalIdx: 2
   pointOutIdx: 2147483646
   destinationIdx: 2147483646

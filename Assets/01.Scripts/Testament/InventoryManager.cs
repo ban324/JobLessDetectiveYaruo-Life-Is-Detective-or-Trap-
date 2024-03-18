@@ -54,6 +54,22 @@ public class InventoryManager : MonoBehaviour
                 SlideInventory();
             }
         }
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            if (inventoryPanel.activeSelf && TextManager.instance.state != TalkState.none || TextManager.instance.state != TalkState.waitTalk)
+            {
+                if (TextManager.instance.GetCurrentEvent().evtType == TalkEventType.Proposal && testaments[displayIdx].id == TextManager.instance.GetCurrentEvent().target1Key)
+                {
+                    DisableInventory();
+                    TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.GetCurrentEvent().target2Key));
+                }else
+                {
+                    DisableInventory();
+                    TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.GetCurrentEvent().target3Key));
+
+                }
+            }
+        }
     }
     public void DisableInventory()
     {

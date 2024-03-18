@@ -14,24 +14,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: '-'
-    value: "\uC880 \uD2B9\uC774\uD558\uAC8C \uC0DD\uAE34 \uBB3C\uAC74\uC774 \uBCF4\uC778\uB2E4."
-    eventIdx: 0
-  - name: '-'
-    value: "\uB098\uBB34 \uC704\uC5D0 \uAC78\uB9B0 \uB4EF\uD55C\uB370. \uD639\uC2DC?"
-    eventIdx: 0
-  - name: '-'
-    value: "......\uBB50\uC57C. \uC774\uAC74."
-    eventIdx: 0
-  - name: '-'
-    value: "\uC5F4\uC1E0\uACE0\uB9AC?"
-    eventIdx: 0
+    value: "\uB098\uBB34 \uC717\uCABD\uC5D0 \uBB34\uC5B8\uAC00\uAC00 \uBC18\uC9DD\uAC70\uB9AC\uACE0
+      \uC788\uB2E4.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uD639\uC2DC \uC800\uAC8C \uBAA9\uAC78\uC774?\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "......\uBB50\uC57C. \uC774\uAC74.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uC5F4\uC1E0\uACE0\uB9AC?\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   - name: '-'
     value: "\uB9D0 \uADF8\uB300\uB85C \uACE0\uB9AC \uBD80\uBD84\uB9CC \uB0A8\uC740
-      \uAC83\uC774 \uBC18\uC9DD\uAC70\uB9AC\uB358 \uAC70\uC600\uB2E4."
-    eventIdx: 0
-  - name: '-'
-    value: "\uB610\uB2E4\uC2DC \uCC3E\uC544\uBD10\uC57C \uD560 \uAC83 \uAC19\uB2E4......"
-    eventIdx: 0
+      \uAC83\uC774 \uBC18\uC9DD\uAC70\uB9AC\uACE0 \uC788\uC5C8\uB2E4.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uB2E4\uC2DC \uCC3E\uC544\uBCF4\uC790.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   generalIdx: 6
   pointOutIdx: 2147483646
   destinationIdx: 2147483646

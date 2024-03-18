@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e45b7344914a49a42b9063af361b3bc7, type: 3}
   m_Name: Assran
   m_EditorClassIdentifier: 
+  id: 2
   tName: "\uC544\uC2A4\uB780 \uC790\uB77C"
   tDescription: "\uC57C\uB9E4\uB85C \uC53D!!! \uB4B7 \uC790\uC11D\uC5D0 \uC549\uC744
     \uB54C\uB3C4 \uC548\uC804 \uBCA8\uD2B8\uB97C \uB9E4\uB77C!!"

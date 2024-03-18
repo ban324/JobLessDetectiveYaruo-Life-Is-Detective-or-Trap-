@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb390ed39abff7448bcc73d974acc1a, type: 3}
+  m_Name: Comment9
+  m_EditorClassIdentifier: 
+  texts:
+  - name: '-'
+    value: "\uC5EC\uC790\uC5D0\uAC8C \uC0AC\uC9C4\uC744 \uBCF4\uC5EC\uC8FC\uC5C8\uB2E4.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
+    value: "\uC74C.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
+    value: "\uADF8\uB7F0 \uAE08\uBAA9\uAC78\uC774\uB294 \uBCF8 \uC801\uC774 \uC5C6\uC5B4\uC11C.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uC544. \uADF8\uB7EC\uC2DC\uAD6C\uB098......\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "......\uC751?\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uBB54\uAC00 \uC774\uC0C1\uD55C \uBD80\uBD84\uC774 \uC788\uB294 \uAC83
+      \uAC19\uC740\uB370......\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  generalIdx: 9
+  pointOutIdx: 2147483646
+  destinationIdx: 2147483646

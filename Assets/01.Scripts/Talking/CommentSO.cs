@@ -10,7 +10,7 @@ public class CommentData
 {
     public string name;
     public string value;
-    public int eventIdx;
+    public EventData evt;
 }
 [Serializable]
 

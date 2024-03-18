@@ -13,22 +13,50 @@ MonoBehaviour:
   m_Name: Comment5
   m_EditorClassIdentifier: 
   texts:
-  - name: '-'
-    value: "\uBB54\uAC00 \uBC18\uC9DD\uAC70\uB9AC\uB294 \uBB3C\uAC74!"
-    eventIdx: 0
-  - name: '-'
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uBB54\uAC00 \uBC18\uC9DD\uAC70\uB9AC\uB294 \uBB3C\uAC74!\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
     value: "\uD759 \uC18D\uC5D0 \uBB3B\uD600\uC788\uC5B4\uC11C \uBB54\uC9C0 \uC798
-      \uBAA8\uB974\uACA0\uAE34 \uD558\uC9C0\uB9CC. \uADF8\uB798\uB3C4 \uAEBC\uB0B4\uBCF8\uB2E4\uBA74? "
-    eventIdx: 0
+      \uBAA8\uB974\uACA0\uAE34 \uD558\uC9C0\uB9CC. \uADF8\uB798\uB3C4 \uAEBC\uB0B4\uBCF8\uB2E4\uBA74?
+      \r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   - name: '-'
-    value: "......\uBB50\uC57C. \uC774\uAC74."
-    eventIdx: 0
+    value: "*\uB4A4\uC801\uB4A4\uC801*\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "......\uBB50\uC57C. \uC774\uAC74.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   - name: '-'
-    value: "\uADF8\uB0E5 \uBE44\uB2D0 \uC4F0\uB808\uAE30\uC600\uB124."
-    eventIdx: 0
-  - name: 
-    value: "\uB2E4\uC2DC \uCC3E\uC544\uBD10\uC57C \uD560 \uAC83 \uAC19\uB2E4."
-    eventIdx: 0
+    value: "\uADF8\uB0E5 \uBE44\uB2D0 \uC4F0\uB808\uAE30\uC600\uB2E4.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uB2E4\uC2DC \uCC3E\uC544\uBCF4\uC790.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   generalIdx: 5
   pointOutIdx: 2147483646
   destinationIdx: 2147483646

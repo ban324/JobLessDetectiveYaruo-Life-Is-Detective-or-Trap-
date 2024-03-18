@@ -6,6 +6,6 @@ using UnityEngine;
 public class MapSO : ScriptableObject
 {
     public string mapName;
-    public Sprite mapSprite;
-
+    public Sprite mapSprite;    
+    public List<GameObject> testaments;
 }
