@@ -18,16 +18,18 @@ public class InspectionManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Q))
         {
             isOnCapture = !isOnCapture;
-            if(!isOnCapture)SetCursorEffect(false);
+            SetCursorEffect(isOnCapture);
         }
     }
     public void SetCursorEffect(bool val)
     {
         if(val)
         {
+            //markerTransform.gameObject.SetActive(true);
             markerTransform.GetComponent<ParticleSystem>().Play();
         }else
         {
+            //markerTransform.gameObject.SetActive(false);
             markerTransform.GetComponent<ParticleSystem>().Stop();
 
         }

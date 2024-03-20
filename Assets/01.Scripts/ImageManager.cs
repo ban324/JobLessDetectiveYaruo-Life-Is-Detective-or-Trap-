@@ -17,6 +17,11 @@ public class ImageManager : MonoBehaviour
     public Dictionary<string,TestamentCGSO> cgSOs;
     private void Awake()
     {
-        
+        foreach(var c in cgSOList)
+        {
+            cgSOs.Add(c.idx.ToString(), c);
+        }
+        imagePanel.SetActive(false);
     }
+
 }

@@ -13,6 +13,7 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public Button btn;
     public UnityEvent evt;
     public bool isAlreadyInpected;
+    public ParticleSystem particle;
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(this.Event);
@@ -43,6 +44,8 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             TextManager.instance.commentIdx = 0;
             TextManager.instance.StartTalk(talkComment.texts[0]);
             InspectionManager.instance.SetCursorEffect(false);
+            GetComponentInChildren<ParticleSystem>().Stop();
+
             InspectionManager.instance.isOnCapture = false;
             isAlreadyInpected = true;
             evt?.Invoke();
@@ -53,8 +56,8 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if(InspectionManager.instance.isOnCapture)
         {
-
-            InspectionManager.instance.SetCursorEffect(false);
+            GetComponentInChildren<ParticleSystem>().Stop();
+            //InspectionManager.instance.SetCursorEffect(false);
         }
     }
 
@@ -64,14 +67,20 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             if(isAlreadyInpected)
             {
-
-                InspectionManager.instance.SetCursorEffect(true);
-                InspectionManager.instance.SetCursorCollor(Color.red);
+                var main = GetComponentInChildren<ParticleSystem>().main;
+                Color c = Color.red;
+                c.a /= 2;
+                main.startColor = c;
+                GetComponentInChildren<ParticleSystem>().Play();
+                //InspectionManager.instance.SetCursorEffect(true);
             }else
             {
+                var main = GetComponentInChildren<ParticleSystem>().main;
+                Color c = Color.green;
+                c.a /= 2;
+                main.startColor = c;
+                GetComponentInChildren<ParticleSystem>().Play();
 
-                InspectionManager.instance.SetCursorEffect(true);
-                InspectionManager.instance.SetCursorCollor(Color.green);
             }
         }
     }
