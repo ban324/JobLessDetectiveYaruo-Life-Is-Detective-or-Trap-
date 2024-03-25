@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: '-'
-    value: "\uD06C\uB798\uD30C\uC2A4\uAC00 \uB5A8\uC5B4\uC838\uC788\uB2E4."
+    value: "\uD06C\uB808,,,\uD30C\uC2A4\uAC00,,\uC5B4\uB514,,\uC788\uB354\uB78C,,,"
     evt:
-      evtType: 0
-      target1Key: 
+      evtType: 1
+      target1Key: 1
       target2Key: 
       target3Key: 
   - name: "\uB098"
@@ -37,8 +37,8 @@ MonoBehaviour:
   - name: '-'
     value: "\uD06C\uB808\uD30C\uC2A4\uB97C \uCC59\uACBC\uB2E4."
     evt:
-      evtType: 0
-      target1Key: 
+      evtType: 2
+      target1Key: 1
       target2Key: 
       target3Key: 
   generalIdx: 0

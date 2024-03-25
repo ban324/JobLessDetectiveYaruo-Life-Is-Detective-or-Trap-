@@ -362,15 +362,15 @@ MonoBehaviour:
       target2Key: 
       target3Key: 
   - name: "\uC8FC\uC778\uACF5"
-    value: "\uB108\uBB34\uD55C\uB370. \uADF8\uAC74.\r"
+    value: "\"\uB108\uBB34\uD55C\uB370, \uADF8\uAC74.\"\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: "\uCE5C\uAD6C"
-    value: "\uC544\uBB34\uD2BC. \uC5B4\uCC28\uD53C \uBC31\uC21C\uB370. \uB3C8 \uC880
-      \uD544\uC694\uD558\uC9C0 \uC54A\uC544? \uBCF4\uC218\uB294 \uD06C\uAC8C \uCCD0\uC904\uAC8C.\r"
+    value: "\"\uC544\uBB34\uD2BC. \uC5B4\uCC28\uD53C \uBC31\uC21C\uB370, \uB3C8 \uC880
+      \uD544\uC694\uD558\uC9C0 \uC54A\uC544? \uBCF4\uC218\uB294 \uD06C\uAC8C \uCCD0\uC904\uAC8C.\"\r"
     evt:
       evtType: 0
       target1Key: 
@@ -437,6 +437,36 @@ MonoBehaviour:
   - name: "\uCE5C\uAD6C"
     value: "\uAE5C\uBE61\uD558\uACE0 \uB9D0 \uC548 \uD588\uB294\uB370. \uC0AC\uBB34\uC18C\uB294
       \uB108\uD76C \uC9D1 \uADFC\uCC98\uC57C.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: '-'
+    value: "\uB69C\uB69C\uB69C......\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "......\uC88B\uC544. \uD55C \uBC88 \uAC00\uBCF4\uC790.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uC5EC\uAE30 \uADFC\uCC98\uB77C\uB294\uB370. \uD55C \uBC88 \uC9C0\uB3C4\uB97C
+      \uD655\uC778\uD574 \uBD10\uC57C\uACA0\uB2E4.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "*(\uC9C0\uB3C4\uB294 \uC9C0\uB3C4\uD0A4 \uD0A4\uB97C \uB20C\uB7EC \uBCFC
+      \uC218 \uC788\uB2E4.)*\r"
     evt:
       evtType: 0
       target1Key: 

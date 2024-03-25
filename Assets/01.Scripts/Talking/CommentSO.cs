@@ -20,6 +20,6 @@ public class CommentSO : ScriptableObject
     CommentData data;
     public List<CommentData> texts;
     public int generalIdx;
-    public int pointOutIdx= 0;
-    public int destinationIdx;
+    public string wrongPointoutIdx;
+    public string wrongProposalIdx;
 }

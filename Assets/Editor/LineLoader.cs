@@ -70,8 +70,8 @@ public class TextLoader : MonoBehaviour
             Debug.Log(info[2]);
             CommentSO commentSO = ScriptableObject.CreateInstance<CommentSO>();
             commentSO.generalIdx = int.Parse(info[0]);
-            commentSO.pointOutIdx = info[1] == "-"? int.MaxValue - 1:int.Parse(info[1]);
-            commentSO.destinationIdx = info[1] == "-" ? int.MaxValue -1 : int.Parse(info[2]);
+            commentSO.wrongPointoutIdx = info[1] == "-"? "-":(info[1]);
+            commentSO.wrongProposalIdx = info[2] == "-" ?  "-": (info[2]);
             commentSO.texts = new List<CommentData>();
             idx++;
             while (idx < strs.Length&&strs[idx] != "---,,,,,")

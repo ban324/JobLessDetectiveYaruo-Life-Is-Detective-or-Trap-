@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class TalkEventManager : MonoBehaviour
 {
-    public static TalkEventManager ininstance;
+    public static TalkEventManager instance;
 
     private void Awake()
     {
-        
+        instance = this;
     }
     public void InvokeEventToKey(string key)
     {

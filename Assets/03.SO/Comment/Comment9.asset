@@ -13,44 +13,134 @@ MonoBehaviour:
   m_Name: Comment9
   m_EditorClassIdentifier: 
   texts:
-  - name: '-'
-    value: "\uC5EC\uC790\uC5D0\uAC8C \uC0AC\uC9C4\uC744 \uBCF4\uC5EC\uC8FC\uC5C8\uB2E4.\r"
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uC7A0\uAE50!\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
-    value: "\uC74C.\r"
+    value: "......?\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
-    value: "\uADF8\uB7F0 \uAE08\uBAA9\uAC78\uC774\uB294 \uBCF8 \uC801\uC774 \uC5C6\uC5B4\uC11C.\r"
+    value: "\"\uC65C, \uC65C\uC8E0?\"\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: "\uC8FC\uC778\uACF5"
-    value: "\uC544. \uADF8\uB7EC\uC2DC\uAD6C\uB098......\r"
+    value: "\uC544\uC9C1 \uD560 \uC598\uAE30\uAC00 \uB0A8\uC558\uC5B4\uC694!\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
+    value: "\"\uBB50, \uBB61\uB2C8\uAE4C. \uC774\uBC88\uC5D4.\"\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: "\uC8FC\uC778\uACF5"
-    value: "......\uC751?\r"
+    value: "\uAE08\uBAA9\uAC78\uC774\uB294 \uB9D0\uC2E4\uC218\uB77C\uACE0 \uD558\uC168\uC8E0?\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: "\uC8FC\uC778\uACF5"
-    value: "\uBB54\uAC00 \uC774\uC0C1\uD55C \uBD80\uBD84\uC774 \uC788\uB294 \uAC83
-      \uAC19\uC740\uB370......\r"
+    value: "\uADF8\uB807\uB2E4\uBA74. \uC65C \uD558\uD544 \uAE08\uBAA9\uAC78\uC774\uB97C
+      \uB9D0\uD55C \uAC74\uAC00\uC694?\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uADF8\uC800 \uC6B0\uC5F0\uC778\uAC00\uC694? \uC544\uB2C8\uBA74......\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uBB34\uC5B8\uAC00\uB97C \uC228\uAE30\uAE30 \uC704\uD55C \uBCC0\uBA85\uC778\uAC00\uC694!?\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
+    value: ".......\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uAD49\uC7A5\uD788 \uC218\uC0C1\uD55C \uC5EC\uC790\uAE34 \uD558\uC9C0\uB9CC......
+      \r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uC544\uC9C1 \uBC94\uC778\uC73C\uB85C \uD655\uC815\uC9D3\uAE34 \uD798\uB4E4\uB2E4.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uC0C8\uB85C\uC6B4 \uC99D\uAC70\uB97C \uC5BB\uC5B4\uB0B4\uC57C \uD558\uB294\uB370......\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\"\uC544, \uBCF4\uD1B5 \uC774\uB7F4 \uB550 \uC54C\uB9AC\uBC14\uC774\uB97C
+      \uC5BB\uC5B4\uB0B4\uB358\uAC00.\"\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uBAA9\uAC78\uC774\uB97C \uC783\uC5B4\uBC84\uB9B0 \uC2DC\uAC04\uC744
+      \uB9D0\uD574 \uC54C\uB9AC\uBC14\uC774\uB97C \uC5BB\uC5B4\uB0B4\uBCF4\uC790.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "*(\uC544\uC774\uD15C\uCC3D \uD0A4\uB97C \uB204\uB974\uBA74 \uB0B4\uAC00
+      \uC54C\uACE0 \uC788\uB294 \uC0AC\uAC74\uC758 \uD0C0\uC784\uB77C\uC778\uC774
+      \uBAA8\uC778 \uACF3\uC774 \uC788\uB2E4.)* \r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "*(\uB9C8\uCC2C\uAC00\uC9C0\uB85C \uC6D0\uD558\uB294 \uAC78 \uC120\uD0DD\uD574
+      \uC81C\uC2DC\uD560 \uC218 \uC788\uB2E4.)* \r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
+    value: "\"\uC6B0, \uC6B0\uC5F0\uC774\uC5D0\uC694.\"\r"
     evt:
       evtType: 0
       target1Key: 

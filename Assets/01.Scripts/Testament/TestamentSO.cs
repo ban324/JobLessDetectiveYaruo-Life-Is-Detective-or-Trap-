@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class TestamentSO : ScriptableObject
 {
-    public string id;
+    public string idx;
     public string tName;
     public string tDescription;
     public Sprite imageSprite;

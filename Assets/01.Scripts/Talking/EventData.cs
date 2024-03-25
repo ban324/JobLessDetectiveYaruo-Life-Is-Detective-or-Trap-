@@ -10,6 +10,7 @@ public enum TalkEventType
     GetItem,
     PointOut,
     Proposal,
+    MapMove
 }
 
 [Serializable]

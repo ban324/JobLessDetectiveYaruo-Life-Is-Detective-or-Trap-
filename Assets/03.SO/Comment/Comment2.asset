@@ -13,17 +13,49 @@ MonoBehaviour:
   m_Name: Comment2
   m_EditorClassIdentifier: 
   texts:
-  - name: "\uC8FC\uC778\uACF5"
-    value: "\uC774 \uC8FC\uBCC0\uC744 \uB098\uD0C0\uB0B4\uB294 \uD3B8\uB9AC\uD55C
-      \uC9C0\uB3C4\uB2E4.\r"
+  - name: '-'
+    value: "11\uC2DC 49\uBD84.\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: "\uC8FC\uC778\uACF5"
-    value: "\uC544\uBB34\uB798\uB3C4 \uD0D0\uC815\uC0AC\uBB34\uC18C\uB294 \uC9D1
-      \uC544\uB7AB\uCABD\uC778\uAC00\uBCF4\uB2E4.\r"
+    value: "\uC624\uB298\uB530\uB77C \uD587\uC0B4\uC774 \uB530\uB73B\uD558\uB124.
+      \uACF5\uC6D0\uC774\uB77C \uB354 \uADF8\uB7F0 \uAC83 \uAC19\uAE30\uB3C4 \uD558\uACE0.
+      \r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uC0AC\uB78C\uB3C4 \uC5C6\uACE0 \uB418\uAC8C \uC870\uC6A9\uD558\uB124.
+      \uD558\uAE34 \uC9C0\uAE08\uC740 \uACF5\uC6D0\uC5D0 \uC0AC\uB78C\uC774 \uC788\uC744\uB9CC\uD55C
+      \uC2DC\uAC04\uC740 \uC544\uB2C8\uC9C0.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uAF64 \uB113\uC740 \uACF3\uC778\uB370. \uC5B4\uB5BB\uAC8C \uC5EC\uAE30\uC11C
+      \uADF8 \uBAA9\uAC78\uC774\uB97C \uCC3E\uC544\uC57C \uD558\uB294 \uAC70\uC9C0......\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "\uC6B0\uC120 \uC774 \uC8FC\uBCC0\uC744 \uD0D0\uC0C9\uD574 \uBCF4\uC790.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC8FC\uC778\uACF5"
+    value: "*(\uD3EC\uCC29\uC740 \uD3EC\uCC29\uD0A4 \uD0A4\uB97C \uB20C\uB7EC \uC0AC\uC6A9\uD560
+      \uC218 \uC788\uB2E4.)*\r"
     evt:
       evtType: 0
       target1Key: 

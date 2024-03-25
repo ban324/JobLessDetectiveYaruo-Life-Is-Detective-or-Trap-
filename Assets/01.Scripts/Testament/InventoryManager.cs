@@ -56,16 +56,16 @@ public class InventoryManager : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.E))
         {
-            if (inventoryPanel.activeSelf && TextManager.instance.state != TalkState.none || TextManager.instance.state != TalkState.waitTalk)
+            if (inventoryPanel.activeSelf && TextManager.instance.state != TalkState.none)
             {
-                if (TextManager.instance.GetCurrentEvent().evtType == TalkEventType.Proposal && testaments[displayIdx].id == TextManager.instance.GetCurrentEvent().target1Key)
+                if (TextManager.instance.GetCurrentEvent().evtType == TalkEventType.Proposal && testaments[displayIdx].idx == TextManager.instance.GetCurrentEvent().target1Key)
                 {
                     DisableInventory();
                     TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.GetCurrentEvent().target2Key));
                 }else
                 {
                     DisableInventory();
-                    TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.GetCurrentEvent().target3Key));
+                    TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.currentComment.wrongProposalIdx));
 
                 }
             }
@@ -84,13 +84,22 @@ public class InventoryManager : MonoBehaviour
         testamentsIcons.Add(icon);
         icon.Initiate(testament.imageSprite);
     }
-
+    public bool IsAlreadyGetted(string key)
+    {
+        foreach(var v in testaments)
+        {
+            if(v.idx == key)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public void DisplayInventory()
     {
         inventoryPanel.SetActive(true);
         SlideInventory();
     }
-
     public void SlideInventory()
     {
         for(int i = 0; i < testamentsIcons.Count; i++)
@@ -125,4 +134,5 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
+    //public bool 
 }

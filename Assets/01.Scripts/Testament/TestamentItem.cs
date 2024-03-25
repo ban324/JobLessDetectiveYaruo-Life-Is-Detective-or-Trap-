@@ -14,16 +14,13 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public UnityEvent evt;
     public bool isAlreadyInpected;
     public ParticleSystem particle;
+    
     private void Awake()
     {
-        GetComponent<Button>().onClick.AddListener(this.Event);
+        GetComponent<Button>().onClick.AddListener(this.ClickEvent);
         GetComponent<Image>().alphaHitTestMinimumThreshold = 0.5f;
         btn = GetComponent<Button>();
-        evt.AddListener(() =>
-        {
-            InventoryManager.instance.AddTestament(SO);
-            //Destroy(gameObject);
-        });
+        particle = GetComponentInChildren<ParticleSystem>();
     }
     private void Update()
     {
@@ -33,11 +30,15 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }else
         {
             btn.enabled= false;
+            if(particle.isPlaying)
+            {
+                particle.Stop();
+            }
         }
     }
-    public void Event()
+    public void ClickEvent()
     {
-        Debug.Log("눌림");
+        //Debug.Log("눌림");
         if(talkComment)
         {
             TextManager.instance.currentComment = talkComment;

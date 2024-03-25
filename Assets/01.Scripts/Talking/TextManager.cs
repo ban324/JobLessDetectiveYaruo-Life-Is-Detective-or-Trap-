@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Runtime.InteropServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -51,7 +52,37 @@ public class TextManager : MonoBehaviour
     {
         return currentComment.texts[commentIdx].evt;
     }
+    public void PassText(bool isWaited)
+    {
+        Debug.Log(textBox.text);
+        Debug.Log(commentIdx);
+        StopAllCoroutines();
+        //state = commentIdx + 1 < currentComment.texts.Count ? TalkState.waitTalk : TalkState.none;
+        state = TalkState.waitTalk;
+        if (!isWaited)
+        {
+            textBox.text = string.Empty;
 
+            foreach (string s in currentComment.texts[commentIdx].value.Split('^'))
+            {
+                textBox.text += s;
+            }
+        }
+        if (GetCurrentEvent().evtType == TalkEventType.GetItem && !InventoryManager.instance.IsAlreadyGetted(GetCurrentEvent().target1Key))
+        {
+            
+            InventoryManager.instance.AddTestament(TestamentManager.instance.GetItem(GetCurrentEvent().target1Key));
+
+        }
+        if(commentIdx +1 == currentComment.texts.Count )
+        {
+            CommentDatabase.instance.CheckFlags();
+        }
+        if(commentIdx +1< currentComment.texts.Count && currentComment.texts[commentIdx+1].evt.evtType == TalkEventType.GetItem && InventoryManager.instance.IsAlreadyGetted(currentComment.texts[commentIdx + 1].evt.target1Key))
+        {
+            commentIdx++;
+        }
+    }
     void Update()
     {
         if(Input.GetMouseButtonDown(0))
@@ -61,12 +92,7 @@ public class TextManager : MonoBehaviour
                 StopAllCoroutines();
                 if (state == TalkState.onTalk)
                 {
-                    state = TalkState.waitTalk;
-                    textBox.text = string.Empty;        
-                    foreach (string s in currentComment.texts[commentIdx].value.Split('^'))
-                    {
-                        textBox.text += s;
-                    }
+                    PassText(false);
                 }
                 else if (currentComment && state == TalkState.waitTalk && commentIdx < currentComment.texts.Count - 1)
                 {
@@ -74,6 +100,7 @@ public class TextManager : MonoBehaviour
                 }
                 else if (currentComment && state == TalkState.waitTalk && commentIdx >= currentComment.texts.Count - 1)
                 {
+                    PopupManager.instance.ClosePopup();
                     state = TalkState.none;
                     SetBoxActive(false);
                 }
@@ -95,10 +122,27 @@ public class TextManager : MonoBehaviour
 
 
         }
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            if(state == TalkState.waitTalk || state == TalkState.onTalk)
+            {
+                Debug.Log("가능");
+                if(GetCurrentEvent().evtType == TalkEventType.PointOut)
+                {
+                    Debug.Log("실행");
+                    TryOpenTalk(CommentDatabase.instance.GetComment(GetCurrentEvent().target1Key));
+                    InspectionManager.instance.isOnCapture = !InspectionManager.instance.isOnCapture;
+                }
+            }
+        }
     }
 
     public void TryOpenTalk(CommentSO comment)
     {
+        if(comment == null)
+        {
+            return;
+        }
         StopAllCoroutines();
         currentComment = comment;
         SetBoxActive(true);
@@ -123,35 +167,45 @@ public class TextManager : MonoBehaviour
     }
     IEnumerator TalkCoroutine(CommentData comment)
     {
+        switch (comment.evt.evtType)
+        {
+            case TalkEventType.ImageSet:
+                PopupManager.instance.OpenItem(comment.evt.target1Key);
+                break;
+            case TalkEventType.GetItem:
+                //InventoryManager.instance.AddTestament(TestamentManager.instance.GetItem(comment.evt.target1Key));
+                if (InventoryManager.instance.IsAlreadyGetted(comment.evt.target1Key))
+                {
+                    Debug.Log("asddfasdfs");
+                    //commentIdx++;
+                    PassText(true);
+                    yield return null;
+                }
+                    break;
+            default:
+                break;
+        }
+        Debug.Log("스위치 끝");
         nameBox.text = comment.name != "-" ?comment.name : string.Empty;
         textBox.text = string.Empty;
         isTestament = false;
         int idx = 0;
-        switch (comment.evt.evtType)
-        {
-            case TalkEventType.ImageSet:
-
-                break;
-            case TalkEventType.GetItem:
-                break;
-            default:
-                break;
-        }
         while (idx < comment.value.Length)
         {
+            //Debug.Log(comment.value);
             if (comment.value[idx] == '^')
             {
                 if(InspectionManager.instance.isOnCapture)
                 {
                     if(!isTestament)
                     {
-                        textBox.text += $"<link={comment.evt}><color=#{UnityEngine.ColorUtility.ToHtmlStringRGB(Color.red)}>";
+                        textBox.text += $"<color=#{UnityEngine.ColorUtility.ToHtmlStringRGB(Color.red)}>";
                         isTestament = true;
                         
 
                     }else
                     {
-                        textBox.text += "</color></link>";
+                        textBox.text += "</color>";
                         isTestament = false;
                     }
                 }
@@ -177,8 +231,7 @@ public class TextManager : MonoBehaviour
             }
             idx++;
         }
-
-        state = commentIdx < currentComment.texts.Count ? TalkState.waitTalk : TalkState.none;
+        PassText(true);
     }
 
 }
