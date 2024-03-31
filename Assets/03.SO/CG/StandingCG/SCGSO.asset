@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb29c5e5019fed479ae29dafa72b2ca, type: 3}
   m_Name: SCGSO
   m_EditorClassIdentifier: 
-  cName: "\uC8FC\uC778\uACF5"
+  cName: "*\uC8FC\uC778\uACF5"
   sprites:
-  - {fileID: 21300000, guid: cc30fc0ad29ba214492cac969afba0c1, type: 3}
+  - {fileID: 21300000, guid: 1389e482fda179e4db7ce81cd2cde22b, type: 3}

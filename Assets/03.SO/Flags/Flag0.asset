@@ -13,9 +13,5 @@ MonoBehaviour:
   m_Name: Flag0
   m_EditorClassIdentifier: 
   key: 0
-  conditions:
-  - key: '-'
-    flaged: 0
-  - key: "\r"
-    flaged: 0
+  conditions: []
   isInvoked: 0

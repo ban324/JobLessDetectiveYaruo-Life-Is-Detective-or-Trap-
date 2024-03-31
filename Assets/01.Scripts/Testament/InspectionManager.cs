@@ -23,23 +23,31 @@ public class InspectionManager : MonoBehaviour
             {
                 SetCursorEffect(isOnCapture);
 
-            }else 
-            {
-                if(TextManager.instance.GetCurrentEvent().evtType == TalkEventType.PointOut)
-                {
-
-                    TextManager.instance.StopAllCoroutines();
-                    TextManager.instance.StartTalk(TextManager.instance.currentComment.texts[TextManager.instance.commentIdx]);
-                }else
-                {
-                    TextManager.instance.StopAllCoroutines();
-                    TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.currentComment.wrongPointoutIdx));
-                }
             }
             var arr = FindObjectsOfType<TestamentItem>();
             foreach(var v in arr)
             {
+                Debug.Log(v.name);
                 v.particle.Stop();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && !InventoryManager.instance.inventoryPanel.activeSelf)
+        {
+            Debug.Log("시도");
+            if (TextManager.instance.state == TalkState.waitTalk || TextManager.instance.state == TalkState.onTalk)
+            {
+                Debug.Log("가능");
+                if (TextManager.instance.GetCurrentEvent().evtType == TalkEventType.PointOut)
+                {
+                    Debug.Log("실행");
+                    TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.GetCurrentEvent().target1Key));
+                    InspectionManager.instance.isOnCapture = false;
+                }else if(TextManager.instance.commentIdx != 0)
+                {
+                    TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.currentComment.wrongPointoutIdx));
+                    InspectionManager.instance.isOnCapture = false;
+                }
             }
         }
     }

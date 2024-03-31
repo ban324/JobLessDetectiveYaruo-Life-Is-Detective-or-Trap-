@@ -29,11 +29,6 @@ public class InventoryManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            AddTestament(AssetDatabase.LoadAssetAtPath<TestamentSO>("Assets/03.SO/Testament/Crayon.asset"));
-            AddTestament(AssetDatabase.LoadAssetAtPath<TestamentSO>("Assets/03.SO/Testament/Assran.asset"));
-        }
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             if(inventoryPanel.activeSelf)
@@ -60,12 +55,12 @@ public class InventoryManager : MonoBehaviour
             {
                 if (TextManager.instance.GetCurrentEvent().evtType == TalkEventType.Proposal && testaments[displayIdx].idx == TextManager.instance.GetCurrentEvent().target1Key)
                 {
-                    DisableInventory();
                     TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.GetCurrentEvent().target2Key));
+                    DisableInventory();
                 }else
                 {
-                    DisableInventory();
                     TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.currentComment.wrongProposalIdx));
+                    DisableInventory();
 
                 }
             }

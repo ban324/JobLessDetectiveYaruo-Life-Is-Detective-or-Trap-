@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45b7344914a49a42b9063af361b3bc7, type: 3}
+  m_Name: CellPhone
+  m_EditorClassIdentifier: 
+  idx: 1
+  tName: "\uD734\uB300\uD3F0"
+  tDescription: "\uAE08\uBC29\uC774\uB77C\uB3C4 \uD130\uC9C8 \uAC83\uB9CC \uAC19\uC740
+    \uAD6C\uD615 \uD3F0\uC774\uB2E4."
+  imageSprite: {fileID: 21300000, guid: c44584447f27b554c8b3c8f4d875e2d6, type: 3}

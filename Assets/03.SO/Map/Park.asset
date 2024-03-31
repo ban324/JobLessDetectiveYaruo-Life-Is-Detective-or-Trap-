@@ -14,3 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapName: "\uACF5\uC6D0"
   mapSprite: {fileID: 21300000, guid: 62b8a4d4bf70e0b439e9ce9fb4ffe93e, type: 3}
+  testaments:
+  - {fileID: 9159701428126471981, guid: 683ef540a9f08574c9d093aad7e4998e, type: 3}
+  - {fileID: 2425352721268989030, guid: a42d84b3d6eaaa94faca3337de3b8b50, type: 3}
+  - {fileID: 2081194111609852001, guid: c8d98c15766707a47a3f41301e6e5aa4, type: 3}
+  enterEvt:
+    m_PersistentCalls:
+      m_Calls: []

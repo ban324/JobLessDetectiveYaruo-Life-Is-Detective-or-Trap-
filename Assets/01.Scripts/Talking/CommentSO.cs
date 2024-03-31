@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using UnityEngine;
 
 
@@ -19,7 +20,7 @@ public class CommentSO : ScriptableObject
 {
     CommentData data;
     public List<CommentData> texts;
-    public int generalIdx;
+    public string keyValue;
     public string wrongPointoutIdx;
     public string wrongProposalIdx;
 }

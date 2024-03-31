@@ -1,3 +1,4 @@
+using Codice.CM.Common;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -69,7 +70,7 @@ public class TextLoader : MonoBehaviour
             Debug.Log(info[1]);
             Debug.Log(info[2]);
             CommentSO commentSO = ScriptableObject.CreateInstance<CommentSO>();
-            commentSO.generalIdx = int.Parse(info[0]);
+            commentSO.keyValue = info[0];
             commentSO.wrongPointoutIdx = info[1] == "-"? "-":(info[1]);
             commentSO.wrongProposalIdx = info[2] == "-" ?  "-": (info[2]);
             commentSO.texts = new List<CommentData>();
@@ -90,9 +91,9 @@ public class TextLoader : MonoBehaviour
                     t = t.Remove(t.LastIndexOf(','), t.Length - t.LastIndexOf(',')-1);
                     t = t.Remove(t.LastIndexOf(','), t.Length - t.LastIndexOf(',')-1);
                     t = t.Remove(t.LastIndexOf(','), t.Length - t.LastIndexOf(',')-1);
-                    string ev1 = spl[spl.Length - 2];
-                    string ev2 = spl[spl.Length - 1];
-                    string ev3 = spl[spl.Length - 1];
+                    string ev1 = spl[spl.Length - 4];
+                    string ev2 = spl[spl.Length - 3];
+                    string ev3 = spl[spl.Length - 2];
                     string ev4 = spl[spl.Length - 1];
                     
                     string[] arr = { name, t ,ev1,ev2,ev3,ev4};
@@ -119,7 +120,14 @@ public class TextLoader : MonoBehaviour
                         case "3":
                             evt = new EventData(TalkEventType.Proposal, ev2,ev3,ev4);
                         break;
+                        case "4":
+                            evt = new EventData(TalkEventType.MapMove, ev2);
+                            break;
+                        case "5":
+                            evt = new EventData(TalkEventType.MapUnlock, ev2);
+                            break;
                         default:
+                            Debug.Log(ev1);
                             evt = new EventData(TalkEventType.Null, null);
                             break;
                     }
@@ -140,7 +148,7 @@ public class TextLoader : MonoBehaviour
             }
             string path = Application.dataPath;
             path += "/03.SO/Comment/";
-            AssetDatabase.CreateAsset(commentSO, $"Assets/03.SO/Comment/Comment{commentSO.generalIdx}.asset");
+            AssetDatabase.CreateAsset(commentSO, $"Assets/03.SO/Comment/Comment{commentSO.keyValue}.asset");
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             Debug.Log(cnt);

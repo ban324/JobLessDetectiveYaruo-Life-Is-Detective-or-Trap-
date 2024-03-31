@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CrayonCG
   m_EditorClassIdentifier: Assembly-CSharp::TestamentCGSO
   sprite: {fileID: 21300000, guid: a569c9490c7fd6f4bb5b56a246f8e382, type: 3}
-  idx: 1
+  idx: 0
   sname: "\uD06C\uB808\uC6A9"

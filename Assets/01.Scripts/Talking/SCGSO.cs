@@ -5,6 +5,6 @@ using UnityEngine;
 [CreateAssetMenu]
 public class SCGSO : ScriptableObject
 {
-    public string cName;
+    public string cName; 
     public List<Sprite> sprites = new List<Sprite>();
 }

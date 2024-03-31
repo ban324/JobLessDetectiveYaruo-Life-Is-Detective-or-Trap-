@@ -3,13 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu]
-public class TestamentCGSO:ScriptableObject
-{
-    public Sprite sprite;
-    public int idx;
-    public string sname;
-}
 
 public class PopupManager : MonoBehaviour
 {
@@ -24,12 +17,14 @@ public class PopupManager : MonoBehaviour
         cgSOs=  new Dictionary<string,TestamentCGSO>();
         foreach(var c in cgSOList)
         {
+            Debug.Log(c.idx.ToString());
             cgSOs.Add(c.idx.ToString(), c);
         }
         imagePanel.SetActive(false);
     }
     public void OpenItem(string key)
     {
+        Debug.Log(key);
         if(cgSOs.ContainsKey(key))
         {
             imagePanel.SetActive(true);

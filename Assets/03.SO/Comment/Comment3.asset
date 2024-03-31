@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Comment3
   m_EditorClassIdentifier: 
   texts:
-  - name: "\uC8FC\uC778\uACF5"
+  - name: '-'
     value: "\uBB54\uAC00 \uBC18\uC9DD\uAC70\uB9AC\uB294 \uBB3C\uAC74!\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
+  - name: '-'
     value: "\"\uD759 \uC18D\uC5D0 \uBB3B\uD600\uC788\uC5B4\uC11C \uBB54\uC9C0 \uC798
       \uBAA8\uB974\uACA0\uAE34 \uD558\uC9C0\uB9CC, \uADF8\uB798\uB3C4 \uAEBC\uB0B4\uBCF8\uB2E4\uBA74?
       \"\r"
@@ -36,8 +36,8 @@ MonoBehaviour:
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
-    value: "\"......\uBB50\uC57C, \uC774\uAC74.\"\r"
+  - name: '-'
+    value: "\"...\uBB50\uC57C, \uC774\uAC74.\"\r"
     evt:
       evtType: 0
       target1Key: 
@@ -50,13 +50,6 @@ MonoBehaviour:
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
-    value: "\uB2E4\uC2DC \uCC3E\uC544\uBCF4\uC790.\r"
-    evt:
-      evtType: 0
-      target1Key: 
-      target2Key: 
-      target3Key: 
-  generalIdx: 3
-  pointOutIdx: 2147483646
-  destinationIdx: 2147483646
+  keyValue: 3
+  wrongPointoutIdx: '-'
+  wrongProposalIdx: '-'

@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public TestamentSO SO;
-    public CommentSO talkComment;
+    public string commentKey;
     public Button btn;
     public UnityEvent evt;
     public bool isAlreadyInpected;
@@ -17,10 +17,15 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     
     private void Awake()
     {
+        Initialize();
+    }
+    public void Initialize()
+    {
         GetComponent<Button>().onClick.AddListener(this.ClickEvent);
-        GetComponent<Image>().alphaHitTestMinimumThreshold = 0.5f;
+        GetComponent<Image>().alphaHitTestMinimumThreshold = 0.1f;
         btn = GetComponent<Button>();
         particle = GetComponentInChildren<ParticleSystem>();
+
     }
     private void Update()
     {
@@ -39,11 +44,10 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void ClickEvent()
     {
         //Debug.Log("´­¸²");
-        if(talkComment)
+        if(CommentDatabase.instance.GetComment(commentKey))
         {
-            TextManager.instance.currentComment = talkComment;
-            TextManager.instance.commentIdx = 0;
-            TextManager.instance.StartTalk(talkComment.texts[0]);
+            CommentSO com = CommentDatabase.instance.GetComment(commentKey);
+            TextManager.instance.TryOpenTalk(com);
             InspectionManager.instance.SetCursorEffect(false);
             GetComponentInChildren<ParticleSystem>().Stop();
 

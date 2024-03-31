@@ -41,6 +41,6 @@ MonoBehaviour:
       target1Key: 1
       target2Key: 
       target3Key: 
-  generalIdx: 0
-  pointOutIdx: 123232
-  destinationIdx: 221112
+  keyValue: 
+  wrongPointoutIdx: 10
+  wrongProposalIdx: 7

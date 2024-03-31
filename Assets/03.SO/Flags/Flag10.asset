@@ -16,6 +16,4 @@ MonoBehaviour:
   conditions:
   - key: 9
     flaged: 0
-  - key: "\r"
-    flaged: 0
   isInvoked: 0

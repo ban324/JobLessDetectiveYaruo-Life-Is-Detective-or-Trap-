@@ -13,73 +13,63 @@ MonoBehaviour:
   m_Name: Comment6
   m_EditorClassIdentifier: 
   texts:
-  - name: "\uC8FC\uC778\uACF5"
-    value: "\"\uC800, \uC800\uAE30.\"\r"
+  - name: '-'
+    value: "\uBAA9\uAC78\uC774... \uB300\uCCB4 \uC5B4\uB514 \uC788\uB294\uAC70\uC57C!\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
-    value: "\uC65C \uADF8\uB7EC\uC2DC\uC8E0?\r"
+  - name: '-'
+    value: "\uAD1C\uD788 \uC774\uB7F0 \uC77C \uD55C\uB2E4\uACE0 \uD588\uB098?\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
-    value: "\uBB3C\uAC74\uC744 \uD558\uB098 \uCC3E\uACE0 \uC788\uC5B4\uC694.\r"
+  - name: '-'
+    value: "12\uC2DC 3\uBD84.\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
-    value: "\uC74C...... \uC5B4\uB5A4 \uBB3C\uAC74\uC778\uC9C0?\r"
+  - name: '-'
+    value: "\uC2DC\uAC04\uB3C4 \uB9CE\uC774 \uC9C0\uB0AC\uACE0...\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
-    value: "\uAC00\uC6B4\uB370\uC5D0 \uBCC4 \uBAA8\uC591 \uC7A5\uC2DD\uC774 \uB2EC\uB9B0
-      \uBAA9\uAC78\uC774\uC5D0\uC694. \uC774 \uC8FC\uBCC0\uC5D0\uC11C \uC783\uC5B4\uBC84\uB9B0
-      \uAC83 \uAC19\uC544\uC11C\uC694.\r"
+  - name: '-'
+    value: "\uC2AC\uC2AC \uCC3E\uAE30 \uD798\uB4E4\uC5B4\uC9C0\uB294\uB370...\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
-    value: "\uC5B4\uB5BB\uAC8C \uC0DD\uACBC\uC8E0?\r"
+  - name: '-'
+    value: "\uC5B4?\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
-    value: "\uC5EC\uC790\uC5D0\uAC8C \uC0AC\uC9C4\uC744 \uBCF4\uC5EC\uC918\uC57C\uACA0\uB2E4.\r"
+  - name: '-'
+    value: "\uC0AC\uB78C\uC774\uB2E4. \uC5B8\uC81C\uBD80\uD130 \uC5EC\uAE30 \uC0AC\uB78C\uC774
+      \uC788\uB358 \uAC70\uC9C0?\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
-    value: "*(\uC544\uC774\uD15C\uCC3D \uD0A4\uB97C \uB20C\uB7EC \uC6D0\uD558\uB294
-      \uC544\uC774\uD15C\uC744 \uC120\uD0DD\uD558\uC5EC \uC81C\uC2DC\uD560 \uC218
-      \uC788\uB2E4.)*\r"
+  - name: '-'
+    value: "\uC800 \uC0AC\uB78C\uD55C\uD14C\uB77C\uB3C4 \uBB3C\uC5B4\uBCFC\uAE4C?\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
-    value: "\"\uC544, \uC0AC\uC9C4\uC774 \uC788\uC5B4\uC694. \uC7A0\uC2DC\uB9CC\uC694......\"\r"
-    evt:
-      evtType: 0
-      target1Key: 
-      target2Key: 
-      target3Key: 
-  generalIdx: 6
-  pointOutIdx: 2147483646
-  destinationIdx: 2147483646
+  keyValue: 6
+  wrongPointoutIdx: '-'
+  wrongProposalIdx: '-'

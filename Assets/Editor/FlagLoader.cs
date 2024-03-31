@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -33,7 +34,7 @@ public class FlagLoader : EditorWindow
         {
             GameObject gObj = new GameObject();
             FlagDownloader loader = gObj.AddComponent<FlagDownloader>();
-            loader.TextLoad(int.Parse(BVariable));
+            loader.TextLoad(int.Parse(BVariable)+1);
             //
         }
 
@@ -59,7 +60,8 @@ public class FlagDownloader : MonoBehaviour
         yield return www.SendWebRequest();
         Debug.Log(www.downloadHandler.text);
         string[] strs = www.downloadHandler.text.Split('\n');
-        int idx = 0, cnt = 0;
+        int cnt = 0;
+        
         while (cnt < scriptCnt)
         {
             string[] info = strs[cnt].Split(',');
@@ -68,8 +70,9 @@ public class FlagDownloader : MonoBehaviour
             flag.conditions = new List<FlagCondition>();
             for(int i = 1; i< info.Length; i++)
             {
-                if (info[i] == "") continue;
+                if (info[i] == "-" || info[i][0] == '-') continue;
                 FlagCondition cond = new FlagCondition();
+                Debug.Log((int)(info[i][0]));
                 cond.key = info[i];
                 cond.flaged = false;
                 flag.conditions.Add(cond);

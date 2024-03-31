@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 [Serializable]
 public class FlagCondition
@@ -34,12 +31,28 @@ public class CommentDatabase : MonoBehaviour
         }
         foreach(FlagSO flag in flagList)
         {
-            flagDictionary.Add(flag.key, flag);
-            foreach(FlagCondition con in flag.conditions)
+            FlagSO copy = Instantiate(flag);
+            flagDictionary.Add(copy.key, copy);
+            for(int i = 0; i < copy.conditions.Count; i ++)
             {
-                if (!conditionDictionary.ContainsKey(con.key))
+                if (conditionDictionary.ContainsKey( copy.conditions[i].key))
                 {
-                    conditionDictionary.Add(con.key, con);
+                    copy.conditions[i] = conditionDictionary[copy.conditions[i].key];
+                }else
+                {
+                    FlagCondition cd = new FlagCondition();
+                    foreach (char c in copy.conditions[i].key)
+                    {
+                        if(48 <= c && c <= 57)
+                        {
+                            cd.key += c;
+                        }
+                    }
+                    cd.flaged = copy.conditions[i].flaged;
+                    conditionDictionary.Add(cd.key, cd);
+                    copy.conditions[i] = cd;
+                    string e = string.Empty;
+                    
                 }
             }
         }
@@ -49,28 +62,39 @@ public class CommentDatabase : MonoBehaviour
     public CommentSO GetComment(string key)
     {
         Debug.Log(key);
-        foreach(var v in commentDictionary)
-        {
-            Debug.Log(v.Key + ": " + v.Value);
-        }
         if(commentDictionary.ContainsKey(key))
         {
-            Debug.Log("배출");
             return commentDictionary[key];
         }
         return null;
     }
+    public void SetFlag(string key)
+    {
+        //Debug.Log(conditionDictionary.ContainsKey(key));
+        //Debug.Log("플래그 세팅 시도");
+        foreach (var v in conditionDictionary)
+        {
+            Debug.Log((int)v.Key.Length + " " + (int)key.Length);
+        }
+        if (conditionDictionary.ContainsKey(key))
+        {
+            Debug.Log("플래그 세팅 성공");
+            conditionDictionary[key].flaged = true;
+        }
+    }
     public void CheckFlags()
     {
-        Debug.Log("asedfsd");
+        //Debug.Log("asedfsd");
         foreach(var flag in flagDictionary)
         {
             if(!flag.Value.isInvoked)
             {
                 FlagSO so = flag.Value;
+                //Debug.Log(flag.Key + " 체크 시도");
                 if(so.IsConditionSuccessed())
                 {
-                    
+                    //Debug.Log("체크 성공");
+                    TalkEventManager.instance.InvokeEventToKey(so.key);
                     so.isInvoked = true;
 
                 }

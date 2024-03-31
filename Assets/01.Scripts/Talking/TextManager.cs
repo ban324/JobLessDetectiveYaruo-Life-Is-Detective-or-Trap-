@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -29,7 +30,7 @@ public class TextManager : MonoBehaviour
     public TalkState state;
     public CommentSO currentComment;
     public int commentIdx;
-
+    [SerializeField]private string beforeCGKey;
     private bool isTestament;
     public void Awake()
     {
@@ -54,8 +55,6 @@ public class TextManager : MonoBehaviour
     }
     public void PassText(bool isWaited)
     {
-        Debug.Log(textBox.text);
-        Debug.Log(commentIdx);
         StopAllCoroutines();
         //state = commentIdx + 1 < currentComment.texts.Count ? TalkState.waitTalk : TalkState.none;
         state = TalkState.waitTalk;
@@ -67,21 +66,73 @@ public class TextManager : MonoBehaviour
             {
                 textBox.text += s;
             }
+            string[] ss = textBox.text.Split('"');
+            textBox.text = string.Empty;
+            foreach (string s in ss)
+            {
+                textBox.text += s;
+            }
+            bool isStar = false;
+            string str = textBox.text;
+            textBox.text = string.Empty;
+            foreach(char c in str)
+            {
+                if(c == '*')
+                {
+                    if(!isStar)
+                    {
+                        textBox.text += $"<color=#{UnityEngine.ColorUtility.ToHtmlStringRGB(Color.green)}>";
+                    isStar = !isStar;
+                    }else
+                    {
+                        textBox.text +=c + "</color>";
+                    isStar = !isStar;
+                        continue;
+                    }
+                }
+                textBox.text += c;
+            }
         }
+
         if (GetCurrentEvent().evtType == TalkEventType.GetItem && !InventoryManager.instance.IsAlreadyGetted(GetCurrentEvent().target1Key))
         {
             
             InventoryManager.instance.AddTestament(TestamentManager.instance.GetItem(GetCurrentEvent().target1Key));
 
         }
+        if (GetCurrentEvent().evtType == TalkEventType.MapMove)
+        {
+            if (!MapManager.instance.maps.ContainsKey(GetCurrentEvent().target1Key))
+            {
+                Debug.Log(GetCurrentEvent().target1Key);
+                MapManager.instance.OnMapUnlocked(MapManager.instance.GetMap(GetCurrentEvent().target1Key));
+            }
+            MapManager.instance.ChangeMap(GetCurrentEvent().target1Key);
+        }
+        if (GetCurrentEvent().evtType == TalkEventType.MapUnlock)
+        {
+            if (!MapManager.instance.maps.ContainsKey(GetCurrentEvent().target1Key))
+            {
+                Debug.Log(GetCurrentEvent().target1Key);
+                MapManager.instance.OnMapUnlocked(MapManager.instance.GetMap(GetCurrentEvent().target1Key));
+            }
+        }
         if(commentIdx +1 == currentComment.texts.Count )
         {
+            Debug.Log(currentComment.keyValue);
+            talkCG.gameObject.SetActive(false);
+            CommentDatabase.instance.SetFlag(currentComment.keyValue);
             CommentDatabase.instance.CheckFlags();
+            MapManager.instance.placedCharacter.gameObject.SetActive(true);
         }
-        if(commentIdx +1< currentComment.texts.Count && currentComment.texts[commentIdx+1].evt.evtType == TalkEventType.GetItem && InventoryManager.instance.IsAlreadyGetted(currentComment.texts[commentIdx + 1].evt.target1Key))
+        if (commentIdx +1< currentComment.texts.Count && currentComment.texts[commentIdx+1].evt.evtType == TalkEventType.GetItem && InventoryManager.instance.IsAlreadyGetted(currentComment.texts[commentIdx + 1].evt.target1Key))
         {
             commentIdx++;
         }
+    }
+    private void Start()
+    {
+        TryOpenTalk(CommentDatabase.instance.GetComment("0"));
     }
     void Update()
     {
@@ -122,19 +173,6 @@ public class TextManager : MonoBehaviour
 
 
         }
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            if(state == TalkState.waitTalk || state == TalkState.onTalk)
-            {
-                Debug.Log("가능");
-                if(GetCurrentEvent().evtType == TalkEventType.PointOut)
-                {
-                    Debug.Log("실행");
-                    TryOpenTalk(CommentDatabase.instance.GetComment(GetCurrentEvent().target1Key));
-                    InspectionManager.instance.isOnCapture = !InspectionManager.instance.isOnCapture;
-                }
-            }
-        }
     }
 
     public void TryOpenTalk(CommentSO comment)
@@ -155,15 +193,18 @@ public class TextManager : MonoBehaviour
     }
     public void OpenSCG(CommentData data)
     {
-        if(cgDictionary.ContainsKey(data.name))
+        
+        if (cgDictionary.ContainsKey(data.name))
         {
+            beforeCGKey = data.name;
             talkCG.gameObject.SetActive(true);
             talkCG.sprite = cgDictionary[data.name].sprites[0];
         }
-        else
+        else if (data.name != "-")
         {
             talkCG.gameObject.SetActive(false);
         }
+        
     }
     IEnumerator TalkCoroutine(CommentData comment)
     {
@@ -176,7 +217,7 @@ public class TextManager : MonoBehaviour
                 //InventoryManager.instance.AddTestament(TestamentManager.instance.GetItem(comment.evt.target1Key));
                 if (InventoryManager.instance.IsAlreadyGetted(comment.evt.target1Key))
                 {
-                    Debug.Log("asddfasdfs");
+                    //Debug.Log("asddfasdfs");
                     //commentIdx++;
                     PassText(true);
                     yield return null;
@@ -185,11 +226,17 @@ public class TextManager : MonoBehaviour
             default:
                 break;
         }
-        Debug.Log("스위치 끝");
+        //Debug.Log("스위치 끝");
         nameBox.text = comment.name != "-" ?comment.name : string.Empty;
+        if(nameBox.text.IndexOf("*") != -1)
+        {
+            nameBox.text = nameBox.text.Remove(nameBox.text.IndexOf("*"));
+        }
         textBox.text = string.Empty;
         isTestament = false;
+        MapManager.instance.placedCharacter.gameObject.SetActive(false);
         int idx = 0;
+        bool isblue = false;    
         while (idx < comment.value.Length)
         {
             //Debug.Log(comment.value);
@@ -212,6 +259,22 @@ public class TextManager : MonoBehaviour
                 idx++;
                 continue;
 
+            }
+            if (comment.value[idx] == '*')
+            {
+                if(!isblue)
+                {
+                    textBox.text += $"<color=#{UnityEngine.ColorUtility.ToHtmlStringRGB(Color.green)}>";
+
+                }else
+                {
+                    textBox.text += "</color>";
+                }
+            }
+            if (comment.value[idx] == '"')
+            {
+                idx++;
+                continue; 
             }
             textBox.text += comment.value[idx];
             OpenSCG(comment);

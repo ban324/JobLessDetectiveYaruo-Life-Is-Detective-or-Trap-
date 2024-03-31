@@ -21,21 +21,21 @@ MonoBehaviour:
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
+  - name: '-'
     value: "\uD639\uC2DC \uC800\uAC8C \uBAA9\uAC78\uC774?\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
-    value: "\"......\uBB50\uC57C, \uC774\uAC74.\"\r"
+  - name: '-'
+    value: "\"...\uBB50\uC57C, \uC774\uAC74.\"\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
+  - name: '-'
     value: "\uC5F4\uC1E0\uACE0\uB9AC?\r"
     evt:
       evtType: 0
@@ -50,13 +50,6 @@ MonoBehaviour:
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
-    value: "\uB2E4\uC2DC \uCC3E\uC544\uBCF4\uC790.\r"
-    evt:
-      evtType: 0
-      target1Key: 
-      target2Key: 
-      target3Key: 
-  generalIdx: 4
-  pointOutIdx: 2147483646
-  destinationIdx: 2147483646
+  keyValue: 4
+  wrongPointoutIdx: '-'
+  wrongProposalIdx: '-'
