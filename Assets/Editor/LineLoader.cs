@@ -30,7 +30,6 @@ public class LineLoader : EditorWindow
     }
     private void OnGUI()
     {
-        AVariable = EditorGUILayout.TextField("input1", AVariable);
         BVariable = EditorGUILayout.TextField("input2", BVariable);
         if (GUILayout.Button("Extract"))
         {
@@ -45,7 +44,7 @@ public class LineLoader : EditorWindow
 
 public class TextLoader : MonoBehaviour
 {
-    public string documentID = "1L5z4yT3bdVGbAKWCEoxPfjc1jvIhkJjvtgazdVP_gts";
+    public string documentID = "1KYiUvCeLeeiT5Byq0_4ZAGyY1nNtqxIEWeZYBjr2rtQ";
     public void TextLoad(int pageId)
     {
         
@@ -62,6 +61,10 @@ public class TextLoader : MonoBehaviour
         Debug.Log(www.downloadHandler.text);
         string[] strs = www.downloadHandler.text.Split('\n');
         int idx = 0, cnt = 0;
+        if(FindObjectOfType<CommentDatabase>())
+        {
+            FindObjectOfType<CommentDatabase>().commentList = new List<CommentSO> { };
+        }
         while(cnt < scriptCnt)
         {
             string[] info = strs[idx].Split(',');
@@ -126,6 +129,9 @@ public class TextLoader : MonoBehaviour
                         case "5":
                             evt = new EventData(TalkEventType.MapUnlock, ev2);
                             break;
+                        case "6":
+                            evt = new EventData(TalkEventType.Question, ev2);
+                            break;
                         default:
                             Debug.Log(ev1);
                             evt = new EventData(TalkEventType.Null, null);
@@ -151,6 +157,10 @@ public class TextLoader : MonoBehaviour
             AssetDatabase.CreateAsset(commentSO, $"Assets/03.SO/Comment/Comment{commentSO.keyValue}.asset");
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
+            if(FindObjectOfType<CommentDatabase>())
+            {
+                FindObjectOfType<CommentDatabase>().commentList.Add(commentSO);
+            }
             Debug.Log(cnt);
             cnt++;
         }

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
@@ -14,6 +15,7 @@ public enum TalkState
     none,
     onTalk,
     waitTalk,
+    question
 }
 public class TextManager : MonoBehaviour
 {
@@ -30,8 +32,12 @@ public class TextManager : MonoBehaviour
     public TalkState state;
     public CommentSO currentComment;
     public int commentIdx;
+    public ImpactEffect impact;
+    public BlurUIEffect blur;
     [SerializeField]private string beforeCGKey;
+    private string radiusKey;
     private bool isTestament;
+    public Material blurMat;
     public void Awake()
     {
         instance = this;
@@ -117,13 +123,17 @@ public class TextManager : MonoBehaviour
                 MapManager.instance.OnMapUnlocked(MapManager.instance.GetMap(GetCurrentEvent().target1Key));
             }
         }
+        if(GetCurrentEvent().evtType == TalkEventType.Question)
+        {
+            QuestionManager.instance.Question(GetCurrentEvent().target1Key);
+        }
         if(commentIdx +1 == currentComment.texts.Count )
         {
             Debug.Log(currentComment.keyValue);
             talkCG.gameObject.SetActive(false);
             CommentDatabase.instance.SetFlag(currentComment.keyValue);
             CommentDatabase.instance.CheckFlags();
-            MapManager.instance.placedCharacter.gameObject.SetActive(true);
+            MapManager.instance.placedCharacter.Load();
         }
         if (commentIdx +1< currentComment.texts.Count && currentComment.texts[commentIdx+1].evt.evtType == TalkEventType.GetItem && InventoryManager.instance.IsAlreadyGetted(currentComment.texts[commentIdx + 1].evt.target1Key))
         {
@@ -153,6 +163,7 @@ public class TextManager : MonoBehaviour
                 {
                     PopupManager.instance.ClosePopup();
                     state = TalkState.none;
+                    blur.Play(false);
                     SetBoxActive(false);
                 }
 
@@ -167,6 +178,7 @@ public class TextManager : MonoBehaviour
                 {
                     StopAllCoroutines();
                     state = TalkState.none;
+                    blur.Play(false);
                     SetBoxActive(false);
                 }
             }
@@ -177,7 +189,8 @@ public class TextManager : MonoBehaviour
 
     public void TryOpenTalk(CommentSO comment)
     {
-        if(comment == null)
+        MapManager.instance.PlaceCharacter("-", "-");
+        if (comment == null)
         {
             return;
         }
@@ -185,11 +198,28 @@ public class TextManager : MonoBehaviour
         currentComment = comment;
         SetBoxActive(true);
         commentIdx = 0;
+        blur.Play(true);
         StartTalk(comment.texts[commentIdx]);
     }
     public void SetBoxActive(bool v)
     {
-        talkBox.SetActive(v);
+        DG.Tweening.Sequence seq = DOTween.Sequence();
+        if(v)
+        {
+            var vec = Camera.main.WorldToViewportPoint(Vector2.zero);
+            seq.Append(talkBox.transform.DOMove(new Vector3(0,0,talkBox.transform.position.z), 0.4f));
+
+        }
+        else
+        {
+            Debug.Log("fal  ");
+
+            var vec = Camera.main.WorldToViewportPoint(Vector2.zero);
+            Debug.Log(vec);
+            seq.Append(talkBox.transform.DOMove(new Vector3(0, -10, talkBox.transform.position.z), 0.4f));
+
+        }
+        seq.Restart();
     }
     public void OpenSCG(CommentData data)
     {
@@ -200,7 +230,7 @@ public class TextManager : MonoBehaviour
             talkCG.gameObject.SetActive(true);
             talkCG.sprite = cgDictionary[data.name].sprites[0];
         }
-        else if (data.name != "-")
+        else if (data.name != "-" && data.name != "야루오")
         {
             talkCG.gameObject.SetActive(false);
         }
@@ -208,6 +238,7 @@ public class TextManager : MonoBehaviour
     }
     IEnumerator TalkCoroutine(CommentData comment)
     {
+
         switch (comment.evt.evtType)
         {
             case TalkEventType.ImageSet:
@@ -226,6 +257,7 @@ public class TextManager : MonoBehaviour
             default:
                 break;
         }
+            //impact.OnEffect();
         //Debug.Log("스위치 끝");
         nameBox.text = comment.name != "-" ?comment.name : string.Empty;
         if(nameBox.text.IndexOf("*") != -1)
@@ -234,7 +266,6 @@ public class TextManager : MonoBehaviour
         }
         textBox.text = string.Empty;
         isTestament = false;
-        MapManager.instance.placedCharacter.gameObject.SetActive(false);
         int idx = 0;
         bool isblue = false;    
         while (idx < comment.value.Length)
@@ -278,23 +309,32 @@ public class TextManager : MonoBehaviour
             }
             textBox.text += comment.value[idx];
             OpenSCG(comment);
-            switch (comment.value[idx])
+            if(!isblue)
             {
-                case ' ':
-                    yield return new WaitForSeconds(0.05f);
-                    break;
-                case '.':
-                    yield return new WaitForSeconds(0.05f);
+                switch (comment.value[idx])
+                {
+                    case ' ':
+                        yield return new WaitForSeconds(0.05f);
                         break;
-                case '"':
-                    break;
-                default:
-                    yield return new WaitForSeconds(0.1f);
-                    break;
+                    case '.':
+                        yield return new WaitForSeconds(0.05f);
+                        break;
+                    case '"':
+                        break;
+                    default:
+                        yield return new WaitForSeconds(0.1f);
+                        break;
+                }
+
             }
+
             idx++;
         }
         PassText(true);
     }
+    private void OnDestroy()
+    {
+        blurMat.SetFloat("_Radius", 1);
 
-}
+    }
+}   

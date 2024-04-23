@@ -11,13 +11,13 @@ public class MapButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     private Button button;
     public UnityEvent onPointerEnterEvent;
     public UnityEvent onPointerExitEvent;
-    void Start()
+    public void Initialize()
     {
         // 버튼 컴포넌트를 가져옵니다.
         button = GetComponent<Button>();
 
         // 버튼에 이벤트를 추가합니다.
-        button.onClick.AddListener(() => OnClick());
+        //button.onClick.AddListener(() => OnClick());
     }
 
     // 마우스 포인터가 버튼 위에 올라갔을 때 호출될 함수

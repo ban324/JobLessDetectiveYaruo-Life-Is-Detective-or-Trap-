@@ -13,48 +13,43 @@ MonoBehaviour:
   m_Name: Comment8
   m_EditorClassIdentifier: 
   texts:
-  - name: "\uC8FC\uC778\uACF5"
-    value: "\uC774 \uC0AC\uC9C4\uC778\uB370...\r"
+  - name: "\uC57C\uB77C\uB098\uC774\uC624"
+    value: "\"\uC790, \uC2AC\uC2AC \uD544\uC694\uD55C\uAC74 \uB2E4 \uC870\uC0AC \uD588\uC9C0?\"\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
-    value: "?\r"
+  - name: "\uC57C\uB8E8\uC624"
+    value: "\uC751. \uB300\uAC15 \uC54C \uAC83 \uAC19\uC544.\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
-    value: "?\r"
+  - name: "\uC57C\uB77C\uB098\uC774\uC624"
+    value: "\uADF8\uB798? \uADF8\uB7FC \uD55C\uBC88 \uC815\uB9AC\uD574 \uBCF4\uC790\uACE0.\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
-  - name: "\uC9C0\uB098\uAC00\uB358 \uC5EC\uC790"
-    value: "\uC774\uAC8C \uBB54\uB370\uC694?\r"
+  - name: "\uC57C\uB77C\uB098\uC774\uC624"
+    value: "\"\uC77C\uB2E8, \uBC94\uC778\uC774 \uC0AC\uC6A9\uD55C \uD749\uAE30\uB294
+      \uBB50\uB77C\uACE0 \uC0DD\uAC01\uD574?\"\r"
     evt:
-      evtType: 0
-      target1Key: 
-      target2Key: 
-      target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
-    value: "\"\uC544, \uC8C4\uC1A1\uD569\uB2C8\uB2E4!\"\r"
+      evtType: 4
+      target1Key: 3
+      target2Key: 10
+      target3Key: "9\r"
+  - name: '-'
+    value: "*\uC778\uBCA4\uD1A0\uB9AC\uC5D0\uC11C \uD749\uAE30\uB85C \uBCF4\uC774\uB294
+      '\uADF8\uAC83'\uC744 \uCC3E\uC544 E\uB97C \uB20C\uB7EC \uC81C\uC2DC\uD558\uC790*\r"
     evt:
-      evtType: 0
-      target1Key: 
-      target2Key: 
-      target3Key: 
-  - name: "\uC8FC\uC778\uACF5"
-    value: "\uBB54\uAC00 \uC798\uBABB \uC9DA\uC740 \uB4EF\uD558\uB2E4...\r"
-    evt:
-      evtType: 0
-      target1Key: 
-      target2Key: 
-      target3Key: 
+      evtType: 4
+      target1Key: 3
+      target2Key: 10
+      target3Key: "9\r"
   keyValue: 8
   wrongPointoutIdx: '-'
-  wrongProposalIdx: '-'
+  wrongProposalIdx: 9

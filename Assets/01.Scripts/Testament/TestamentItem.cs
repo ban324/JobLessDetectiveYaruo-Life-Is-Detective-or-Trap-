@@ -68,10 +68,12 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        Debug.Log("InspectionManager.instance.isOnCapture" + InspectionManager.instance.isOnCapture);
         if (InspectionManager.instance.isOnCapture )
         {
             if(isAlreadyInpected)
             {
+                Debug.Log("ÆÄÆ¼Å¬ Å´");
                 var main = GetComponentInChildren<ParticleSystem>().main;
                 Color c = Color.red;
                 c.a /= 2;
@@ -80,6 +82,7 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 //InspectionManager.instance.SetCursorEffect(true);
             }else
             {
+                Debug.Log("ÆÄÆ¼Å¬ ²û");
                 var main = GetComponentInChildren<ParticleSystem>().main;
                 Color c = Color.green;
                 c.a /= 2;

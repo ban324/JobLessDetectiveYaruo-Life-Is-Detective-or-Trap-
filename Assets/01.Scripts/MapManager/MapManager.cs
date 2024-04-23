@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -78,17 +80,24 @@ public class MapManager : MonoBehaviour
     }
     public void OnMapUnlocked(MapSO map)
     {
-        Debug.Log(map.mapName);
-        maps.Add(map.mapName, map);
-        GameObject btn = Instantiate(mapButtonPrefab, mapButtonParent);
-        btn.GetComponentInChildren<TextMeshProUGUI>().text = map.mapName;
-        btn.GetComponent<Button>().onClick.AddListener(()=>{
-            MapManager.instance.ChangeMap(map.mapName);
-        });
-        btn.GetComponent<MapButton>().onPointerEnterEvent.AddListener(() =>
+        if (!map) return;
+        if(!maps.ContainsKey(map.mapName))
         {
-            MapManager.instance.previewImage.sprite = map.mapSprite;
-        });
+            Debug.Log("¸Ê Ãß°¡µÊ : " + map.mapName);
+            Debug.Log(map.mapName);
+            maps.Add(map.mapName, map);
+            GameObject btn = Instantiate(mapButtonPrefab, mapButtonParent);
+            btn.GetComponent<MapButton>().Initialize();
+            btn.GetComponentInChildren<TextMeshProUGUI>().text = map.mapName;
+            btn.GetComponent<Button>().onClick.AddListener(() => {
+                MapManager.instance.ChangeMap(map.mapName);
+            });
+            btn.GetComponent<MapButton>().onPointerEnterEvent.AddListener(() =>
+            {
+                MapManager.instance.previewImage.sprite = map.mapSprite;
+            });
+
+        }
     }
 
     public void PlaceCharacter(string imageKey, string commentKey)
@@ -97,18 +106,19 @@ public class MapManager : MonoBehaviour
     }
     public void ChangeMap(string mapName)
     {
-        Debug.Log(mapName);
         if (maps.ContainsKey(mapName))
         {
             foreach(var v in testamentsDictionary)
             {
                 if(v.Value.activeSelf)
                 {
+                    Debug.Log(v.Value.gameObject.name);
                     v.Value.SetActive(false);
                 }
             }
             currentMap = maps[mapName];
             backGround.sprite = currentMap.mapSprite;
+            Debug.Log(currentMap.enterEvt);
             currentMap.enterEvt?.Invoke();
             currentMap.enterEvt = new UnityEvent() ;
             foreach(GameObject obj in currentMap.testaments)
@@ -125,6 +135,7 @@ public class MapManager : MonoBehaviour
                     //testa.GetComponent<TestamentItem>().Initialize();
                 }
             }
+            placedCharacter.Load();
         }
         SetMapScreen(false);
     }

@@ -43,10 +43,11 @@ public class CommentDatabase : MonoBehaviour
                     FlagCondition cd = new FlagCondition();
                     foreach (char c in copy.conditions[i].key)
                     {
-                        if(48 <= c && c <= 57)
+                        if(48 <= c && c <= 57 || c =='-')
                         {
                             cd.key += c;
                         }
+                        Debug.LogError(cd.key);
                     }
                     cd.flaged = copy.conditions[i].flaged;
                     conditionDictionary.Add(cd.key, cd);
@@ -72,13 +73,9 @@ public class CommentDatabase : MonoBehaviour
     {
         //Debug.Log(conditionDictionary.ContainsKey(key));
         //Debug.Log("플래그 세팅 시도");
-        foreach (var v in conditionDictionary)
-        {
-            Debug.Log((int)v.Key.Length + " " + (int)key.Length);
-        }
         if (conditionDictionary.ContainsKey(key))
         {
-            Debug.Log("플래그 세팅 성공");
+            Debug.LogError("플래그 세팅 성공" + key);
             conditionDictionary[key].flaged = true;
         }
     }
@@ -90,14 +87,17 @@ public class CommentDatabase : MonoBehaviour
             if(!flag.Value.isInvoked)
             {
                 FlagSO so = flag.Value;
-                //Debug.Log(flag.Key + " 체크 시도");
-                if(so.IsConditionSuccessed())
+                if (so.IsConditionSuccessed())
                 {
-                    //Debug.Log("체크 성공");
+                    Debug.LogError("체크 성공" + so.key);
                     TalkEventManager.instance.InvokeEventToKey(so.key);
                     so.isInvoked = true;
 
                 }
+            }
+            else
+            {
+                TalkEventManager.instance.InvokeRepeatingEventToKey(flag.Key);
             }
         }
     }

@@ -14,10 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   key: 6
   conditions:
-  - key: 3
-    flaged: 0
   - key: 4
-    flaged: 0
-  - key: "5\r"
     flaged: 0
   isInvoked: 0

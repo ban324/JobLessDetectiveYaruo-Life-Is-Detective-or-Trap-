@@ -11,7 +11,8 @@ public enum TalkEventType
     PointOut,
     Proposal,
     MapMove,
-    MapUnlock
+    MapUnlock,
+    Question
 }
 
 [Serializable]

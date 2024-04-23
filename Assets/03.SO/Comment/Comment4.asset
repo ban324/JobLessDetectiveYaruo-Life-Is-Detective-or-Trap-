@@ -14,37 +14,90 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: '-'
-    value: "\uB098\uBB34 \uC717\uCABD\uC5D0 \uBB34\uC5B8\uAC00\uAC00 \uBC18\uC9DD\uAC70\uB9AC\uACE0
-      \uC788\uB2E4.\r"
+    value: "\uC624\uD6C4 1\uC2DC 10\uBD84\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "\uD639\uC2DC \uC800\uAC8C \uBAA9\uAC78\uC774?\r"
+    value: "\uC640\uC7A5\uCC3D\uB9E8\uC158 108\uD638\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "\"...\uBB50\uC57C, \uC774\uAC74.\"\r"
+    value: "...\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "\uC5F4\uC1E0\uACE0\uB9AC?\r"
+    value: "\uAE68\uC9C4 \uCC3D\uBB38 \uC0AC\uC774\uB85C \uB4E4\uC5B4\uC624\uB294
+      \uD587\uBE5B\uC774 \uD54F\uC790\uAD6D\uC744 \uBE44\uCD94\uACE0\uC788\uB2E4.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC57C\uB77C\uB098\uC774\uC624"
+    value: "\"\uADF8\uB7FC, \uC0AC\uAC74 \uD604\uC7A5\uC744 \uBCF8 \uAC10\uC0C1\uC740
+      \uC5B4\uB54C?\"\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC57C\uB8E8\uC624"
+    value: "\uC9D1 \uC548\uC740 \uC0DD\uAC01\uBCF4\uB2E4 \uAE68\uB057\uD55C\uB370?\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC57C\uB77C\uB098\uC774\uC624"
+    value: "...\uAD1C\uD788 \uBD88\uAE38\uD574\uC9C0\uB294 \uC18C\uB9AC \uD558\uC9C0
+      \uB9C8.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC57C\uB77C\uB098\uC774\uC624"
+    value: "\"\uC5B4\uCA0C\uB4E0, \uB124\uAC00 \uD560 \uD14C\uC2A4\uD2B8\uB294 \uAC04\uB2E8\uD574.\"\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC57C\uB77C\uB098\uC774\uC624"
+    value: "\"\uC774 \uBC29\uC5D0 \uC788\uB294 \uBB3C\uAC74\uB4E4\uC744 \uC870\uC0AC\uD558\uACE0,
+      \uC0AC\uAC74 \uAE30\uB85D\uACFC \uB300\uC870\uD574\uC11C \uC774 \uBC29\uC5D0\uC11C
+      \uC788\uC5C8\uB358 \uC77C\uC744 \uCD94\uB9AC\uD574 \uB0B4\uBA74 \uB3FC.\"\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC57C\uB77C\uB098\uC774\uC624"
+    value: "\"\uB098\uB294 \uB3C4\uC640\uC904 \uC218 \uC5C6\uC9C0\uB9CC, \uB124\uAC00
+      \uD55C \uCD94\uB9AC\uB97C \uC815\uB9AC\uD558\uB294 \uAC83\uB9CC \uB3C4\uC640\uC904\uAC8C.\"\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: "\uC57C\uB8E8\uC624"
+    value: "\uC54C\uACA0\uC5B4.\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "\uB9D0 \uADF8\uB300\uB85C \uACE0\uB9AC \uBD80\uBD84\uB9CC \uB0A8\uC740
-      \uAC83\uC774 \uBC18\uC9DD\uAC70\uB9AC\uACE0 \uC788\uC5C8\uB2E4.\r"
+    value: "..\uC88B\uC544. \uC870\uC0AC\uB97C \uC2DC\uC791\uD574\uBCF4\uC790.\r"
     evt:
       evtType: 0
       target1Key: 

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -29,7 +30,7 @@ public class InventoryManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             if(inventoryPanel.activeSelf)
             {
@@ -49,18 +50,33 @@ public class InventoryManager : MonoBehaviour
                 SlideInventory();
             }
         }
-        if(Input.GetKeyDown(KeyCode.E))
+        if(inventoryPanel.activeSelf && Input.GetKeyDown(KeyCode.E))
         {
-            if (inventoryPanel.activeSelf && TextManager.instance.state != TalkState.none)
+            Debug.Log("판넬 : " + inventoryPanel.activeSelf + " 스테이트 : " + (TextManager.instance.state != TalkState.none).ToString());
+            if ( TextManager.instance.state != TalkState.none)
             {
+                SlideInventory();
+                Debug.Log(" 이벤트 타입 : " + (TextManager.instance.GetCurrentEvent().evtType == TalkEventType.Proposal).ToString() + " 아이디 일치");
                 if (TextManager.instance.GetCurrentEvent().evtType == TalkEventType.Proposal && testaments[displayIdx].idx == TextManager.instance.GetCurrentEvent().target1Key)
                 {
-                    TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.GetCurrentEvent().target2Key));
-                    DisableInventory();
+                    testamentsIcons[displayIdx].evt.AddListener(() =>
+                    {
+                        testamentsIcons[displayIdx].ReturnOriginalScale();
+                        TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.GetCurrentEvent().target2Key));
+                        DisableInventory();
+                        testamentsIcons[displayIdx].evt = new UnityEngine.Events.UnityEvent();
+                    });
+                    testamentsIcons[displayIdx].Proposal();
                 }else
                 {
-                    TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.currentComment.wrongProposalIdx));
-                    DisableInventory();
+                    testamentsIcons[displayIdx].evt.AddListener(() =>
+                    {
+                        testamentsIcons[displayIdx].ReturnOriginalScale();
+                        TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.currentComment.wrongProposalIdx));
+                        DisableInventory();
+                        testamentsIcons[displayIdx].evt = new UnityEngine.Events.UnityEvent();
+                    });
+                    testamentsIcons[displayIdx].Proposal();
 
                 }
             }
@@ -119,6 +135,7 @@ public class InventoryManager : MonoBehaviour
                 testa.gameObject.SetActive(true);
                 testa.anchoredPosition = new Vector2(0, 180);
                 testa.sizeDelta = new Vector2(500, 500);
+                testa.GetComponent<TestamentIcon>().ReturnOriginalScale();
                 testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().sizeDelta = new Vector2(500, 500);
                 testaNameBox.text = testaments[i].tName;
                 testaDescBox.text = testaments[i].tDescription;

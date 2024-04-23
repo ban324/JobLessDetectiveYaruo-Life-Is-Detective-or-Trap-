@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb29c5e5019fed479ae29dafa72b2ca, type: 3}
   m_Name: Friend
   m_EditorClassIdentifier: 
-  cName: "\uCE5C\uAD6C"
+  cName: "\uC57C\uB77C\uB098\uC774\uC624"
   sprites:
   - {fileID: 21300000, guid: 2429de5bab350e64aafc915e65eac71a, type: 3}

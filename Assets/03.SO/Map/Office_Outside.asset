@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Office_Outside
   m_EditorClassIdentifier: 
   mapName: "\uC0AC\uBB34\uC18C \uC55E"
-  mapSprite: {fileID: 21300000, guid: f19f7fb30a7ceb848adbcc30b02143c7, type: 3}
+  mapSprite: {fileID: 21300000, guid: 008fc73cc7ed6c1438ff075578d579a6, type: 3}
   testaments: []
   enterEvt:
     m_PersistentCalls:

@@ -13,7 +13,7 @@ public class FlagSO : ScriptableObject
     {
         foreach (var condition in conditions)
         {
-            //Debug.Log(condition.key + " " + condition.flaged);
+            //Debug.LogError(condition.key + " " + condition.flaged);
             if (condition.flaged == false)
             {
                 return false;

@@ -14,37 +14,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: '-'
-    value: "\uD480\uC18D\uC5D0 \uBB34\uC5B8\uAC00 \uBE5B\uB098\uB294 \uBB3C\uAC74\uC774
-      \uBCF4\uC778\uB2E4.\r"
+    value: "\uCC3D\uBB38\uC774 \uAE68\uC838\uC788\uB2E4.\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "\uC774\uBC88\uC5D4 \uC81C\uBC1C!\r"
+    value: "\uC544\uB9C8 \uBC94\uC778\uC740 \uCC3D\uBB38\uC744 \uAE68\uACE0 \uC7A0\uAE08\uC744
+      \uD480\uACE0 \uB4E4\uC5B4\uC628 \uAC83 \uAC19\uB2E4.\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "...\uBB50\uC57C. \uC774\uAC74 \uB610!\r"
+    value: "*\uB07C\uC775-*\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "\uC4F8 \uC218\uC870\uCC28 \uC5C6\uC5B4\uBCF4\uC774\uB294 \uBC30\uD130\uB9AC\uB2E4\r"
+    value: "\"\uCC3D\uBB38\uC740 \uC548\uCABD\uC73C\uB85C \uC5F4\uB824, \uCC3D\uD2C0\uC774
+      \uC11C\uB78D\uC5D0 \uBD80\uB51B\uD78C\uB2E4.\"\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "\uB3C4\uB300\uCCB4 \uC65C \uC774\uB7F0\uAC8C \uC5EC\uAE30 \uC788\uB294
-      \uAC74\uB370?\r"
+    value: "\uBC16\uC5D0\uC11C \uCC3D\uBB38\uC744 \uAE7C\uB2E4\uBA74 \uAE68\uC9C4
+      \uC720\uB9AC \uC870\uAC01\uC774 \uBC29 \uC548 \uC5B4\uB518\uAC00\uC5D0 \uC788\uC744
+      \uAC83\uC774\uB2E4.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: '-'
+    value: "\uC8FC\uBCC0\uC744 \uD55C\uBC88 \uB354 \uB458\uB7EC\uBCF4\uC790.\r"
     evt:
       evtType: 0
       target1Key: 
