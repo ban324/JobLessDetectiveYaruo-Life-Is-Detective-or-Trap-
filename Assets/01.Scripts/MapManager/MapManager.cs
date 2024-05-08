@@ -19,6 +19,7 @@ public class MapManager : MonoBehaviour
     public GameObject mapPanel;
     public Image backGround;
     public Image previewImage;
+    public TextMeshProUGUI previewText;
     public Transform mapButtonParent;
     public GameObject mapButtonPrefab;
     public Transform testamentParent;
@@ -95,6 +96,7 @@ public class MapManager : MonoBehaviour
             btn.GetComponent<MapButton>().onPointerEnterEvent.AddListener(() =>
             {
                 MapManager.instance.previewImage.sprite = map.mapSprite;
+                MapManager.instance.previewText.text = map.mapName;
             });
 
         }
@@ -106,7 +108,7 @@ public class MapManager : MonoBehaviour
     }
     public void ChangeMap(string mapName)
     {
-        if (maps.ContainsKey(mapName))
+        if (mapSODict.ContainsKey(mapName))
         {
             foreach(var v in testamentsDictionary)
             {
@@ -116,7 +118,7 @@ public class MapManager : MonoBehaviour
                     v.Value.SetActive(false);
                 }
             }
-            currentMap = maps[mapName];
+            currentMap = mapSODict[mapName];
             backGround.sprite = currentMap.mapSprite;
             Debug.Log(currentMap.enterEvt);
             currentMap.enterEvt?.Invoke();
@@ -143,5 +145,6 @@ public class MapManager : MonoBehaviour
     {
         mapPanel.SetActive(val);
         previewImage.sprite = currentMap.mapSprite;
+        previewText.text = currentMap.mapName;
     }
 }

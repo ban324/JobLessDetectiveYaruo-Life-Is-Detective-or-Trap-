@@ -50,6 +50,13 @@ MonoBehaviour:
   - name: '-'
     value: "\uADF8 \uC774\uC720\uB294 \uC544\uB9C8....\r"
     evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: '-'
+    value: "\r"
+    evt:
       evtType: 7
       target1Key: 1
       target2Key: 

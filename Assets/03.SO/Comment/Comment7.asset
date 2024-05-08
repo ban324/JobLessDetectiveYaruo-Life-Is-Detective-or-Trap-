@@ -17,7 +17,7 @@ MonoBehaviour:
     value: "\uC11C\uB78D \uC8FC\uBA74\uC5D4 \uC720\uB9AC \uC870\uAC01\uC774 \uB110\uBD80\uB7EC\uC838\uC788\uB2E4.\r"
     evt:
       evtType: 1
-      target1Key: 3
+      target1Key: 4
       target2Key: 
       target3Key: 
   - name: "\uC57C\uB8E8\uC624"

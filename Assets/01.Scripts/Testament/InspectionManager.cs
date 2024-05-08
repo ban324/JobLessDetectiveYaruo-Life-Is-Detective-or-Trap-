@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class InspectionManager : MonoBehaviour
 {
@@ -14,6 +16,9 @@ public class InspectionManager : MonoBehaviour
     public PointOutEffect effect;
     public Sequence seq1;
     public Sequence seq2;
+    public Color rightColor;
+    public Color wrongColor;
+    private Sequence _colorchangeSequence;
     private void Awake()
     {
         instance = this;
@@ -29,6 +34,7 @@ public class InspectionManager : MonoBehaviour
             isOnCapture = false;
         });
         markerImg.gameObject.SetActive(false);
+
     }
     void Update()
     {
@@ -39,7 +45,7 @@ public class InspectionManager : MonoBehaviour
             if(TextManager.instance.state == TalkState.none && !InventoryManager.instance.inventoryPanel.activeSelf)
             {
                 SetCursorEffect(!isOnCapture);
-                //isOnCapture = true;
+                //isOnCapture = true;   
             }
             var arr = FindObjectsOfType<TestamentItem>();
             foreach(var v in arr)
@@ -90,8 +96,19 @@ public class InspectionManager : MonoBehaviour
             }
         }
     }
-    public void SetCursorCollor(Color color)
+    public void SetColorWrong()
     {
-        markerTransform.GetComponent<ParticleSystem>().startColor = color;
+        Sequence seq = DOTween.Sequence().Append(markerTransform.GetComponent<Image>().DOColor(wrongColor, 0.2f)).AppendCallback(() => Debug.Log(markerTransform.GetComponent<Image>().color));
+        seq.Play();
+    }
+    public void SetColorRight()
+    {
+        Sequence seq = DOTween.Sequence().Append(markerTransform.GetComponent<Image>().DOColor(rightColor, 0.2f)).AppendCallback(() => Debug.Log(markerTransform.GetComponent<Image>().color));
+        seq.Play();
+    }
+    public void SetColorNone()
+    {
+        Sequence seq = DOTween.Sequence().Append(markerTransform.GetComponent<Image>().DOColor(Color.white, 0.2f)).AppendCallback(() => Debug.Log(markerTransform.GetComponent<Image>().color));
+        seq.Play();
     }
 }

@@ -42,7 +42,7 @@ MonoBehaviour:
       target2Key: 
       target3Key: 
   - name: "\uC57C\uB77C\uB098\uC774\uC624"
-    value: "....\uB4E4\uC5B4\uC640!\r"
+    value: "*\uB07C\uC775-*\r"
     evt:
       evtType: 0
       target1Key: 
@@ -66,8 +66,8 @@ MonoBehaviour:
   - name: "\uC57C\uB8E8\uC624"
     value: "\uC624\uB79C\uB9CC\uC774\uB2E4. \uC57C\uB77C\uB098\uC774\uC624.\r"
     evt:
-      evtType: 0
-      target1Key: 
+      evtType: 6
+      target1Key: "\uC0AC\uBB34\uC18C"
       target2Key: 
       target3Key: 
   - name: "\uC57C\uB77C\uB098\uC774\uC624"

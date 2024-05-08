@@ -49,7 +49,7 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             CommentSO com = CommentDatabase.instance.GetComment(commentKey);
             TextManager.instance.TryOpenTalk(com);
             InspectionManager.instance.SetCursorEffect(false);
-            GetComponentInChildren<ParticleSystem>().Stop();
+            InspectionManager.instance.SetColorNone();
 
             InspectionManager.instance.isOnCapture = false;
             isAlreadyInpected = true;
@@ -62,6 +62,7 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         if(InspectionManager.instance.isOnCapture)
         {
             GetComponentInChildren<ParticleSystem>().Stop();
+            InspectionManager.instance.SetColorNone();
             //InspectionManager.instance.SetCursorEffect(false);
         }
     }
@@ -73,21 +74,11 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             if(isAlreadyInpected)
             {
-                Debug.Log("ÆÄÆ¼Å¬ Å´");
-                var main = GetComponentInChildren<ParticleSystem>().main;
-                Color c = Color.red;
-                c.a /= 2;
-                main.startColor = c;
-                GetComponentInChildren<ParticleSystem>().Play();
-                //InspectionManager.instance.SetCursorEffect(true);
+                InspectionManager.instance.SetColorWrong();
             }else
             {
-                Debug.Log("ÆÄÆ¼Å¬ ²û");
-                var main = GetComponentInChildren<ParticleSystem>().main;
-                Color c = Color.green;
-                c.a /= 2;
-                main.startColor = c;
-                GetComponentInChildren<ParticleSystem>().Play();
+
+                InspectionManager.instance.SetColorRight();
 
             }
         }

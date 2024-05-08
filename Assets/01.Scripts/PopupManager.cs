@@ -36,6 +36,7 @@ public class PopupManager : MonoBehaviour
         {
             imagePanel.enableSeq.Restart();
             image.sprite = cgSOs[key].sprite;
+            imagePanel.nameBox.text = cgSOs[key].sname;
         }
     }
     public void ClosePopup()

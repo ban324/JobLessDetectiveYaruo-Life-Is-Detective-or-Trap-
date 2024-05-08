@@ -1,11 +1,8 @@
 using DG.Tweening;
-using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
+using Sequence = DG.Tweening.Sequence;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -21,7 +18,7 @@ public class InventoryManager : MonoBehaviour
 
     public TextMeshProUGUI testaNameBox;
     public TextMeshProUGUI testaDescBox;
-
+    public bool isIconMoving;
     public int displayIdx = 0;
 
     private void Awake()
@@ -42,12 +39,19 @@ public class InventoryManager : MonoBehaviour
                 DisplayInventory();
             }
         }
-        if(Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        if((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)) && !isIconMoving)
         {
             if(inventoryPanel.activeSelf)
             {
-                displayIdx = Mathf.Clamp(displayIdx + (int)(Input.GetAxisRaw("Horizontal")), 0, testaments.Count-1);
-                SlideInventory();
+                Debug.Log(!(displayIdx + (int)(Input.GetAxisRaw("Horizontal")) == -1 && Input.GetKeyDown(KeyCode.LeftArrow)));
+                Debug.Log(!(displayIdx + (int)(Input.GetAxisRaw("Horizontal")) == testaments.Count  && Input.GetKeyDown(KeyCode.RightArrow)));
+                if(!(displayIdx + (int)(Input.GetAxisRaw("Horizontal")) == -1 &&Input.GetKeyDown(KeyCode.LeftArrow)) && !( displayIdx + (int)(Input.GetAxisRaw("Horizontal")) == testaments.Count && Input.GetKeyDown(KeyCode.RightArrow)))
+                {
+                    displayIdx = Mathf.Clamp(displayIdx + (int)(Input.GetAxisRaw("Horizontal")), 0, testaments.Count - 1);
+
+                    SlideInventory();
+
+                }
             }
         }
         if(inventoryPanel.activeSelf && Input.GetKeyDown(KeyCode.E))
@@ -113,38 +117,78 @@ public class InventoryManager : MonoBehaviour
     }
     public void SlideInventory()
     {
+        isIconMoving = true;
+        DG.Tweening.Sequence leftSeq = DOTween.Sequence();
+        DG.Tweening.Sequence rightSeq = DOTween.Sequence();
+        DG.Tweening.Sequence centerSeq = DOTween.Sequence();
+        DG.Tweening.Sequence activeSeq = DOTween.Sequence();
+        string testamentName ="";
+        string testamentDesc ="";
         for(int i = 0; i < testamentsIcons.Count; i++)
         {
             RectTransform testa = testamentsIcons[i].GetComponent<RectTransform>();
             if(i == displayIdx - 1)
             {
-                testa.gameObject.SetActive(true);
-                testa.sizeDelta = new Vector2(300, 300);
-                testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().sizeDelta = new Vector2(300, 300);
-                testa.anchoredPosition = new Vector2(-575, 180);
-            }else if(i == displayIdx + 1)
+                testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().localPosition = testamentIconPrefab.image.GetComponent<RectTransform>().localPosition;
+                leftSeq.AppendCallback(() =>
+                {
+                    testa.gameObject.SetActive(true);
+                }).Append(testa.DOSizeDelta(new Vector2(300, 300), 0.3f)).Join(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().DOSizeDelta(new Vector2(200, 200), 0.2f)).Join(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().DOAnchorPos(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().anchoredPosition + Vector2.down * 20, 0.3f)).Join(testa.DOAnchorPos(new Vector2(-575, 180), 0.3f)).Join(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().DOSizeDelta(new Vector2(200, 200), 0.2f)).Join(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().DOAnchorPos(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().anchoredPosition + Vector2.down * 20, 0.3f));
+
+            }
+            else if(i == displayIdx + 1)
             {
 
-                testa.gameObject.SetActive(true);
-                testa.sizeDelta = new Vector2(300, 300);
-                testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().sizeDelta = new Vector2(300, 300);
-                testa.anchoredPosition = new Vector2(575, 180);
+                testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().localPosition = testamentIconPrefab.image.GetComponent<RectTransform>().localPosition;
+                rightSeq.AppendCallback(() =>
+                {
+                testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().localPosition = testamentIconPrefab.image.GetComponent<RectTransform>().localPosition;
+                    testa.gameObject.SetActive(true);
+                }).Append(testa.DOSizeDelta(new Vector2(300, 300), 0.3f)).Join(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().DOSizeDelta(new Vector2(200, 200), 0.2f)).Join(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().DOAnchorPos(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().anchoredPosition + Vector2.down * 20, 0.3f)).Join(testa.DOAnchorPos(new Vector2(575, 180), 0.3f));
+
             }
             else if(i==displayIdx)
             {
-                testa.gameObject.SetActive(true);
-                testa.anchoredPosition = new Vector2(0, 180);
-                testa.sizeDelta = new Vector2(500, 500);
-                testa.GetComponent<TestamentIcon>().ReturnOriginalScale();
-                testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().sizeDelta = new Vector2(500, 500);
-                testaNameBox.text = testaments[i].tName;
-                testaDescBox.text = testaments[i].tDescription;
+                centerSeq.AppendCallback(() =>
+                {
+                    testa.gameObject.SetActive(true);
+                }).Append(testa.DOAnchorPos(new Vector2(0, 180), 0.3f)).
+                Join(testa.DOSizeDelta(testamentIconPrefab.GetComponent<RectTransform>().sizeDelta, 0.2f)).
+                Join(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().DOSizeDelta(testamentIconPrefab.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().sizeDelta, 0.2f)).
+                Join(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().DOAnchorPos(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().anchoredPosition + Vector2.up * 20, 0.3f)).
+                JoinCallback(() =>
+                {
+                    testa.GetComponent<TestamentIcon>().ReturnOriginalScale();
+                    Debug.LogError("증거 설명!!!!!!!!!!!!!!!!1" + testaDescBox.text);
+                    Debug.LogError("증거물 이름!!!!!!!!!!!!!!!!"+testaNameBox.text);
+                    
+
+                });
+                testamentDesc = testaments[i].tDescription;
+                testamentName = testaments[i].tName;
             }
             else
             {
-                testa.gameObject.SetActive(false);
+                activeSeq.AppendCallback(() => {
+                    testa.gameObject.SetActive(false);
+                });
             }
         }
+
+        Sequence seq = DOTween.Sequence();
+        seq.AppendCallback(() =>
+        {
+            testaNameBox.text = string.Empty;
+            testaDescBox.text = string.Empty;
+
+        }).Append(leftSeq).Join(rightSeq).Join(centerSeq).Join(activeSeq).AppendCallback(() =>
+        {
+            isIconMoving = false;
+            testaNameBox.text = testamentName;
+            testaDescBox.text = testamentDesc;
+
+        });
+        seq.Restart();  
     }
     //public bool 
 }

@@ -83,20 +83,22 @@ public class QuestionManager : MonoBehaviour
                 {
                     btn.onClick.AddListener(() =>
                     {
+                        Debug.LogError("잘찍었구나");
                         closeSeq.Restart();
                         TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(so.rightTogo));
                     });
-                    Debug.Log("Right = " + so.rightidx);
+                    Debug.Log("Right = " + i + " " + so.rightTogo);
 
                 }else
                 {
 
                     btn.onClick.AddListener(() =>
                     {
+                        Debug.LogError("잘못된 버튼을 눌렀다 애송이");
                         closeSeq.Restart();
                         TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(so.wrongTogo));
                     });
-                    Debug.Log("wrong = " + i);
+                    Debug.Log("wrong = " + i + " " + so.wrongTogo);
                 }
             }
         }

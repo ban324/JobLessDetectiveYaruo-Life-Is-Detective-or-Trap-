@@ -54,6 +54,13 @@ MonoBehaviour:
     value: "\uADF8\uB7FC \uCC3D\uBB38\uC740 \uC5B4\uB5A4 \uC0C1\uD0DC\uC5D0\uC11C
       \uAE68\uC9C4\uAC78\uAE4C?\r"
     evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: '-'
+    value: "\r"
+    evt:
       evtType: 7
       target1Key: 0
       target2Key: 

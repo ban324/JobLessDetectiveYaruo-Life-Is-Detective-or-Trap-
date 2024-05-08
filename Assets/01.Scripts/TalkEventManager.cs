@@ -41,13 +41,13 @@ public class TalkEventManager : MonoBehaviour
                 {
                     MapManager.instance.OnMapUnlocked(MapManager.instance.GetMap("와장창 맨션 104호"));
 
-                        TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment("3"));
+                        TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment("4"));
                     
                 }
                 break;
             case "6":
                 {
-                        TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment("6"));
+                        //TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment("6"));
                     
                 }
                 break;
@@ -106,24 +106,20 @@ public class TalkEventManager : MonoBehaviour
 
     public void InvokeRepeatingEventToKey(string key)
     {
-        Debug.LogError(key);
         switch (key)
         {
             case "8":
                 {
-                    Debug.LogError("8번 발동");
                     MapManager.instance.PlaceCharacter("야라나이오", "8");
                 }
                 break;
             case "9":
                 {
-                    Debug.LogError("9번 발동");
                     MapManager.instance.PlaceCharacter("야라나이오", "8");
                 }
                 break;
             case "10":
                 {
-                    Debug.LogError("10번 발동");
                     MapManager.instance.PlaceCharacter("야라나이오", "10");
                 }
                 break;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Room104
   m_EditorClassIdentifier: 
   mapName: "\uC640\uC7A5\uCC3D \uB9E8\uC158 104\uD638"
-  mapSprite: {fileID: 21300000, guid: 325d4e0a3737ed2419fa309441fe2dae, type: 3}
+  mapSprite: {fileID: 21300000, guid: 20dbf1d0c60735549beec34b70926496, type: 3}
   testaments:
   - {fileID: 5813610430458415441, guid: c0d4a23829c666d4aa26581bd5c7e2ad, type: 3}
   - {fileID: 7426411698332500584, guid: b1e3e090e155bdd40b9aedb2ef59d9b0, type: 3}

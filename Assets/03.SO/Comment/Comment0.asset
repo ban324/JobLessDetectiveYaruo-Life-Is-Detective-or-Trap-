@@ -218,6 +218,14 @@ MonoBehaviour:
       target1Key: "\uC0AC\uBB34\uC18C \uC55E"
       target2Key: 
       target3Key: 
+  - name: '-'
+    value: "*\uC6B0\uD074\uB9AD\uC73C\uB85C \uB9F5\uC744 \uC774\uB3D9\uD560 \uC218
+      \uC788\uB2E4.*\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
   keyValue: 0
   wrongPointoutIdx: '-'
   wrongProposalIdx: '-'

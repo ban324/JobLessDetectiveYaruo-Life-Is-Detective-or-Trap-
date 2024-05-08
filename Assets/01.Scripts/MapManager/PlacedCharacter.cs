@@ -19,7 +19,6 @@ public class PlacedCharacter : MonoBehaviour
     public void Initialize(string newKey, string newCommentKey)
     {
         //Debug.Log("ƒ≥∏Ø≈Õ ºº∆√µ ");
-        Debug.LogError("¿Ã¥œº»∂Û¿Ã¡Óµ ");
         commentKey = newCommentKey;
         if(newKey == "-" || newKey[0] == '-')
         {

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: c44584447f27b554c8b3c8f4d875e2d6, type: 3}
   idx: 1
-  sname: CellPhone
+  sname: "\uD734\uB300\uD3F0"

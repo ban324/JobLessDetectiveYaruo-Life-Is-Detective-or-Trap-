@@ -40,6 +40,13 @@ MonoBehaviour:
     value: "\uADF8\uB7EC\uB824\uBA74 \uAE68\uC84C\uC744 \uB54C \uCC3D\uBB38\uC758
       \uC704\uCE58\uB294...\r"
     evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: '-'
+    value: "\r"
+    evt:
       evtType: 7
       target1Key: 0
       target2Key: 
