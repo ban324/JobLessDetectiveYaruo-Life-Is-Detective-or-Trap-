@@ -13,7 +13,7 @@
 
 ## 조작 방법
 
-<img src="ReadmeResource/movement.gif" 
+<img src="ForReadMe/Control.jpg" 
 
 
 
