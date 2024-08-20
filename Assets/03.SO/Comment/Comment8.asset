@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: "\uC57C\uB77C\uB098\uC774\uC624"
-    value: "\"\uC790, \uC2AC\uC2AC \uD544\uC694\uD55C\uAC74 \uB2E4 \uC870\uC0AC \uD588\uC9C0?\"\r"
+    value: "\uC790, \uC2AC\uC2AC \uD544\uC694\uD55C\uAC74 \uB2E4 \uC870\uC0AC \uD588\uC9C0?\r"
     evt:
       evtType: 0
       target1Key: 
@@ -35,21 +35,21 @@ MonoBehaviour:
       target2Key: 
       target3Key: 
   - name: "\uC57C\uB77C\uB098\uC774\uC624"
-    value: "\"\uC77C\uB2E8, \uBC94\uC778\uC774 \uC0AC\uC6A9\uD55C \uD749\uAE30\uB294
-      \uBB50\uB77C\uACE0 \uC0DD\uAC01\uD574?\"\r"
+    value: "\uC77C\uB2E8, \uBC94\uC778\uC774 \uC0AC\uC6A9\uD55C \uD749\uAE30\uB294
+      \uBB50\uB77C\uACE0 \uC0DD\uAC01\uD574?\r"
     evt:
       evtType: 4
       target1Key: 3
-      target2Key: 10
-      target3Key: "9\r"
+      target2Key: 11
+      target3Key: 10
   - name: '-'
     value: "*\uC778\uBCA4\uD1A0\uB9AC\uC5D0\uC11C \uD749\uAE30\uB85C \uBCF4\uC774\uB294
       '\uADF8\uAC83'\uC744 \uCC3E\uC544 E\uB97C \uB20C\uB7EC \uC81C\uC2DC\uD558\uC790*\r"
     evt:
       evtType: 4
       target1Key: 3
-      target2Key: 10
-      target3Key: "9\r"
+      target2Key: 11
+      target3Key: 10
   keyValue: 8
   wrongPointoutIdx: '-'
   wrongProposalIdx: 9

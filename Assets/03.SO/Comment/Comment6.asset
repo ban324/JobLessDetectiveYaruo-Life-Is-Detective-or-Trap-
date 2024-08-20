@@ -22,18 +22,18 @@ MonoBehaviour:
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "\"\uBAA8\uC11C\uB9AC\uC5D0 \uD53C\uAC00 \uBB3B\uC5B4\uC788\uB294 \uAC83\uC73C\uB85C
+    value: "\uBAA8\uC11C\uB9AC\uC5D0 \uD53C\uAC00 \uBB3B\uC5B4\uC788\uB294 \uAC83\uC73C\uB85C
       \uBCF4\uC544, \uC544\uB9C8 \uC0B4\uC778\uC5D0 \uC4F0\uC778 \uD749\uAE30\uC778
-      \uAC83 \uAC19\uB2E4.\"\r"
+      \uAC83 \uAC19\uB2E4.\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "\"\uC9C0\uBB38\uC774 \uBB3B\uC5B4\uC788\uC5C8\uB2E4\uBA74 \uBC94\uC778\uC744
+    value: "\uC9C0\uBB38\uC774 \uBB3B\uC5B4\uC788\uC5C8\uB2E4\uBA74 \uBC94\uC778\uC744
       \uAE08\uBC29 \uC54C \uC218 \uC788\uACA0\uC9C0\uB9CC, \uB098\uC5D0\uAC90 \uC9C0\uBB38\uC744
-      \uD655\uC778\uD560 \uBC29\uBC95\uC740 \uC5C6\uB2E4.\"\r"
+      \uD655\uC778\uD560 \uBC29\uBC95\uC740 \uC5C6\uB2E4.\r"
     evt:
       evtType: 2
       target1Key: 3

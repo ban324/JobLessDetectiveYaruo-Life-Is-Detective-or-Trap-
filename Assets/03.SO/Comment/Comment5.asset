@@ -36,8 +36,8 @@ MonoBehaviour:
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "\"\uCC3D\uBB38\uC740 \uC548\uCABD\uC73C\uB85C \uC5F4\uB824, \uCC3D\uD2C0\uC774
-      \uC11C\uB78D\uC5D0 \uBD80\uB51B\uD78C\uB2E4.\"\r"
+    value: "\uCC3D\uBB38\uC740 \uC548\uCABD\uC73C\uB85C \uC5F4\uB824, \uCC3D\uD2C0\uC774
+      \uC11C\uB78D\uC5D0 \uBD80\uB51B\uD78C\uB2E4.\r"
     evt:
       evtType: 0
       target1Key: 

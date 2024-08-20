@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MyRoom
   m_EditorClassIdentifier: 
   mapName: "\uB0B4 \uBC29"
-  mapSprite: {fileID: 21300000, guid: 21889503954a0d447b8911984160f257, type: 3}
+  mapSprite: {fileID: 21300000, guid: 5e237f341b4a05a42b5d1bacfea77f58, type: 3}
   testaments: []
   enterEvt:
     m_PersistentCalls:

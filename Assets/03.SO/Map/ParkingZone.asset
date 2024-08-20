@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ParkingZone
   m_EditorClassIdentifier: 
   mapName: "\uC8FC\uCC28\uC7A5"
-  mapSprite: {fileID: 21300000, guid: 4d5bcd7335b6e4f4b9a27bc1aca374c1, type: 3}
+  mapSprite: {fileID: 21300000, guid: 3b79f4b3a98de9e4da93a15083943b34, type: 3}
   testaments: []
   enterEvt:
     m_PersistentCalls:

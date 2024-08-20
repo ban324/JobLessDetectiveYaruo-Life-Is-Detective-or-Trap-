@@ -24,7 +24,6 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         GetComponent<Button>().onClick.AddListener(this.ClickEvent);
         GetComponent<Image>().alphaHitTestMinimumThreshold = 0.1f;
         btn = GetComponent<Button>();
-        particle = GetComponentInChildren<ParticleSystem>();
 
     }
     private void Update()
@@ -35,10 +34,6 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }else
         {
             btn.enabled= false;
-            if(particle.isPlaying)
-            {
-                particle.Stop();
-            }
         }
     }
     public void ClickEvent()
@@ -61,7 +56,6 @@ public class TestamentItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if(InspectionManager.instance.isOnCapture)
         {
-            GetComponentInChildren<ParticleSystem>().Stop();
             InspectionManager.instance.SetColorNone();
             //InspectionManager.instance.SetCursorEffect(false);
         }

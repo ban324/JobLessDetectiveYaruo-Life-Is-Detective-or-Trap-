@@ -51,7 +51,6 @@ public class InspectionManager : MonoBehaviour
             foreach(var v in arr)
             {
                 Debug.Log(v.name);
-                v.particle.Stop();
             }
         }
 

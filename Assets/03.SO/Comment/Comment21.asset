@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb390ed39abff7448bcc73d974acc1a, type: 3}
+  m_Name: Comment21
+  m_EditorClassIdentifier: 
+  texts:
+  - name: '-'
+    value: "\uCC3D \uBC16\uC5D0\uC120 \uBE60\uB978 \uC18D\uB3C4\uB85C \uC9C0\uB098\uAC00\uB294
+      \uB178\uC744\uC9C4 \uC0B0 \uC18D \uD48D\uACBD\uC774 \uB05D\uC5C6\uC774 \uC9C0\uB098\uAC04\uB2E4.\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  - name: '-'
+    value: "\uC5B4\uB514\uAE4C\uC9C0 \uC654\uAE38\uB798 \uC774\uB7F0 \uC0B0\uBC16\uC5D0
+      \uC548\uBCF4\uC774\uB294\uAC78\uAE4C?\r"
+    evt:
+      evtType: 0
+      target1Key: 
+      target2Key: 
+      target3Key: 
+  keyValue: 21
+  wrongPointoutIdx: '-'
+  wrongProposalIdx: '-'

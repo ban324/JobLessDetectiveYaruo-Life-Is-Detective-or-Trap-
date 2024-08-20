@@ -29,17 +29,29 @@ public class InventoryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if(inventoryPanel.activeSelf)
+            if(TextManager.instance.IsClearForInventory())
+            {
+
+                if (inventoryPanel.activeSelf)
+                {
+                    DisableInventory();
+                }
+                else
+                {
+
+                    EnableInventory();
+                }
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (inventoryPanel.activeSelf)
             {
                 DisableInventory();
             }
-            else
-            {
 
-                DisplayInventory();
-            }
         }
-        if((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)) && !isIconMoving)
+        if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)) && !isIconMoving)
         {
             if(inventoryPanel.activeSelf)
             {
@@ -76,7 +88,7 @@ public class InventoryManager : MonoBehaviour
                     testamentsIcons[displayIdx].evt.AddListener(() =>
                     {
                         testamentsIcons[displayIdx].ReturnOriginalScale();
-                        TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.currentComment.wrongProposalIdx));
+                        TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(TextManager.instance.GetCurrentEvent().target3Key));
                         DisableInventory();
                         testamentsIcons[displayIdx].evt = new UnityEngine.Events.UnityEvent();
                     });
@@ -110,7 +122,7 @@ public class InventoryManager : MonoBehaviour
         }
         return false;
     }
-    public void DisplayInventory()
+    public void EnableInventory()
     {
         inventoryPanel.SetActive(true);
         SlideInventory();
@@ -155,7 +167,7 @@ public class InventoryManager : MonoBehaviour
                 }).Append(testa.DOAnchorPos(new Vector2(0, 180), 0.3f)).
                 Join(testa.DOSizeDelta(testamentIconPrefab.GetComponent<RectTransform>().sizeDelta, 0.2f)).
                 Join(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().DOSizeDelta(testamentIconPrefab.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().sizeDelta, 0.2f)).
-                Join(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().DOAnchorPos(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().anchoredPosition + Vector2.up * 20, 0.3f)).
+                Join(testa.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().DOAnchorPos(testamentIconPrefab.GetComponent<TestamentIcon>().image.GetComponent<RectTransform>().anchoredPosition + Vector2.up , 0.3f)).
                 JoinCallback(() =>
                 {
                     testa.GetComponent<TestamentIcon>().ReturnOriginalScale();

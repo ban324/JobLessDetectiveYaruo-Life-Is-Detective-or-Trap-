@@ -43,7 +43,7 @@ MonoBehaviour:
       target2Key: 
       target3Key: 
   - name: "\uC57C\uB77C\uB098\uC774\uC624"
-    value: "\"\uC790, \uC5EC\uAE30\uAC00 \uC0AC\uAC74\uC774 \uC77C\uC5B4\uB09C \uD604\uC7A5\uC774\uC57C.\"\r"
+    value: "\uC790, \uC5EC\uAE30\uAC00 \uC0AC\uAC74\uC774 \uC77C\uC5B4\uB09C \uD604\uC7A5\uC774\uC57C.\r"
     evt:
       evtType: 0
       target1Key: 
@@ -94,9 +94,9 @@ MonoBehaviour:
       target2Key: 
       target3Key: 
   - name: "\uC57C\uB77C\uB098\uC774\uC624"
-    value: "\"\uC870\uC0AC\uD55C \uC801 \uC5C6\uB294 \uBD80\uBD84\uC5D0 \uAC00\uC838\uB2E4
+    value: "\uC870\uC0AC\uD55C \uC801 \uC5C6\uB294 \uBD80\uBD84\uC5D0 \uAC00\uC838\uB2E4
       \uB300\uBA74 \uD558\uB298\uC0C9, \uC774\uBBF8 \uC870\uC0AC\uD55C \uBD80\uBD84\uC740
-      \uBD89\uC740\uC0C9\uC73C\uB85C \uD45C\uC2DC\uB420 \uAC70\uC57C.\"\r"
+      \uBD89\uC740\uC0C9\uC73C\uB85C \uD45C\uC2DC\uB420 \uAC70\uC57C.\r"
     evt:
       evtType: 0
       target1Key: 

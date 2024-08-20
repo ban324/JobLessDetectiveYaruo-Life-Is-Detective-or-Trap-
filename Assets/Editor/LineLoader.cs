@@ -65,7 +65,7 @@ public class TextLoader : MonoBehaviour
         {
             FindObjectOfType<CommentDatabase>().commentList = new List<CommentSO> { };
         }
-        while(cnt < scriptCnt)
+        while(cnt <= scriptCnt)
         {
             string[] info = strs[idx].Split(',');
             Debug.Log(strs[idx]);
@@ -89,6 +89,13 @@ public class TextLoader : MonoBehaviour
                     string[] spl = strs[idx].Split(",");
                     string name = spl[0];
                     //Debug.Log(name);
+                    for(int i = 0; i < spl.Length; i++)
+                    {
+                        while (spl[i].IndexOf('\r') != -1)
+                        {
+                            spl[i]=  spl[i].Remove(spl[i].LastIndexOf('\r'));
+                        }
+                    }
                     string t = strs[idx].Remove(0, strs[idx].IndexOf(',')+1);
                     t = t.Remove(t.LastIndexOf(','), t.Length - t.LastIndexOf(',')-1);
                     t = t.Remove(t.LastIndexOf(','), t.Length - t.LastIndexOf(',')-1);
@@ -99,6 +106,11 @@ public class TextLoader : MonoBehaviour
                     string ev3 = spl[spl.Length - 2];
                     string ev4 = spl[spl.Length - 1];
                     
+                    while (t.IndexOf('\"') != -1)
+                    {
+                        t = t.Remove(t.LastIndexOf("\""), 1);
+                    }
+
                     string[] arr = { name, t ,ev1,ev2,ev3,ev4};
                     string c = arr[0];
                     if(c=="---")
@@ -127,7 +139,7 @@ public class TextLoader : MonoBehaviour
                             evt = new EventData(TalkEventType.MapMove, ev2);
                             break;
                         case "5":
-                            evt = new EventData(TalkEventType.MapUnlock, ev2);
+                            evt = new EventData(TalkEventType.MapUnlock, ev2, ev3);
                             break;
                         case "6":
                             evt = new EventData(TalkEventType.Question, ev2);

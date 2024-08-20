@@ -50,16 +50,16 @@ public class PlacedCharacter : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            Debug.LogError("tlwkr");
-            foreach (var v in mapData)
-            {
-                Debug.Log(v.Value.Key + "  " + v.Value.Value);
-            }
-            Debug.LogError("tlwkr");
+        //if(Input.GetKeyDown(KeyCode.L))
+        //{
+        //    Debug.LogError("tlwkr");
+        //    foreach (var v in mapData)
+        //    {
+        //        Debug.Log(v.Value.Key + "  " + v.Value.Value);
+        //    }
+        //    Debug.LogError("tlwkr");
 
-        }
+        //}
     }
     public void Load()
     {

@@ -14,51 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts:
   - name: "\uC57C\uB77C\uB098\uC774\uC624"
-    value: "\uADF8\uB798. \uCC3D\uBB38\uC774 \uC548\uCABD\uC73C\uB85C \uC5F4\uB9B0
-      \uCC44 \uAE68\uC84C\uC73C\uB2C8 \uC11C\uB78D \uC8FC\uBCC0\uC5D0\uB9CC \uC720\uB9AC\uAC00
-      \uC788\uC744\uAC70\uC57C.\r"
+    value: "\uAE00\uC384.. \uADF8 \uC0C1\uD0DC\uC5EC\uB3C4 \uAE68\uC9C4 \uC870\uAC01\uC774
+      \uBC14\uB014 \uAC74 \uC5C6\uC744 \uAC83 \uAC19\uC740\uB370.\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "...\uBB54\uAC00 \uC774\uC0C1\uD558\uB2E4.\r"
+    value: "\uB2E4\uC2DC \uD55C\uBC88 \uC0DD\uAC01 \uD574\uBD10\uC57C\uACA0\uB2E4.\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "\"\uBC16\uC5D0\uC11C \uCE68\uC785\uD55C \uAC15\uB3C4\uC758 \uC785\uC7A5\uC5D0\uC120,
-      \uC774\uBBF8 \uC5F4\uB824\uC788\uB294 \uCC3D\uBB38\uC744 \uBC18\uB4DC\uC2DC
-      \uAE68\uC57C\uD558\uB294 \uC774\uC720\uB294 \uC5C6\uC744 \uAC83\uC774\uB2E4.\"\r"
+    value: "\uC11C\uB78D \uC8FC\uC704\uC5D0\uB9CC \uC788\uC5C8\uB2E4\uBA74 \uBC94\uC778\uACFC
+      \uC11C\uB78D \uC0AC\uC774\uC5D0\uB294 \uCC3D\uBB38\uC774 \uC788\uC5C8\uC5B4\uC57C\uD558\uB294\uB370...\r"
     evt:
       evtType: 0
       target1Key: 
       target2Key: 
       target3Key: 
   - name: '-'
-    value: "\"\uC989, \uBC94\uC778\uC740 \uCC3D\uBB38\uC744 \uAE68\uC11C \uBC16\uC5D0\uC11C
-      \uC548\uC73C\uB85C \uB4E4\uC5B4\uC654\uB2E8 \uAC83\uC744 \uAC15\uC870\uD560
-      \uC774\uC720\uAC00 \uC788\uC744 \uAC83\uC774\uB2E4.\"\r"
-    evt:
-      evtType: 0
-      target1Key: 
-      target2Key: 
-      target3Key: 
-  - name: '-'
-    value: "\uADF8 \uC774\uC720\uB294 \uC544\uB9C8....\r"
-    evt:
-      evtType: 0
-      target1Key: 
-      target2Key: 
-      target3Key: 
-  - name: '-'
-    value: "\r"
+    value: "\uADF8\uB7EC\uB824\uBA74 \uAE68\uC84C\uC744 \uB54C \uCC3D\uBB38\uC758
+      \uC704\uCE58\uB294...\r"
     evt:
       evtType: 7
-      target1Key: 1
+      target1Key: 0
       target2Key: 
       target3Key: 
   keyValue: 12

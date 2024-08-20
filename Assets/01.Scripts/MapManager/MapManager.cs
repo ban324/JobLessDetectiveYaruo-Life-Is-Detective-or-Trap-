@@ -22,8 +22,11 @@ public class MapManager : MonoBehaviour
     public TextMeshProUGUI previewText;
     public Transform mapButtonParent;
     public GameObject mapButtonPrefab;
+    public Dictionary<string,Button> mapButtons;
     public Transform testamentParent;
     public PlacedCharacter placedCharacter;
+    public ImpactEffect changeEffect;
+    public Dictionary<string, List<string>> connectMapsDictionary;
     private void Awake()
     {
         instance = this;
@@ -31,6 +34,8 @@ public class MapManager : MonoBehaviour
 
         mapSODict = new Dictionary<string, MapSO>();
 
+        mapButtons = new Dictionary<string, Button>();
+        connectMapsDictionary =new Dictionary<string, List<string>>();
         testamentsDictionary = new Dictionary<string, GameObject>();
         foreach(var v in mapSOList)
         {
@@ -39,7 +44,7 @@ public class MapManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetMouseButtonDown(1) && TextManager.instance.state == TalkState.none)
+        if(Input.GetMouseButtonDown(1) && TextManager.instance.state == TalkState.none && TextManager.instance.IsClearForMap())
         {
             if(mapPanel.activeSelf)
             {
@@ -49,13 +54,18 @@ public class MapManager : MonoBehaviour
                 SetMapScreen(true);
             }
         }
-        if(Input.GetKeyDown(KeyCode.V))
+        
+        if(Input.GetKeyDown(KeyCode.Escape) && TextManager.instance.state == TalkState.none)
         {
-            foreach(var map in mapSOList)
-            {
-                OnMapUnlocked(map);
-            }
+            SetMapScreen(false);
         }
+        //if (Input.GetKeyDown(KeyCode.V))
+        //{
+        //    foreach(var map in mapSOList)
+        //    {
+        //        OnMapUnlocked(map);
+        //    }
+        //}
     }
     public MapSO GetMap(string key)
     {
@@ -73,33 +83,103 @@ public class MapManager : MonoBehaviour
         {
             Debug.Log(map.Value.mapName);
         }
-        if(maps.ContainsKey(key))
+        if(mapSODict.ContainsKey(key))
         {
             Debug.Log("ÀÌº¥Æ® Ãß°¡ ¼º°ø");
-            maps[key].enterEvt.AddListener(action);
+            mapSODict[key].enterEvt.AddListener(action);
         }
     }
-    public void OnMapUnlocked(MapSO map)
+    public void OnMapUnlocked(MapSO map, string targetName = "-")
     {
+        Debug.Log(map);
         if (!map) return;
-        if(!maps.ContainsKey(map.mapName))
+        Debug.Log("¸Ê Ãß°¡µÊ : " + map.mapName);
+        Debug.Log(map.mapName);
+        if (targetName =="-")
         {
-            Debug.Log("¸Ê Ãß°¡µÊ : " + map.mapName);
-            Debug.Log(map.mapName);
-            maps.Add(map.mapName, map);
-            GameObject btn = Instantiate(mapButtonPrefab, mapButtonParent);
-            btn.GetComponent<MapButton>().Initialize();
-            btn.GetComponentInChildren<TextMeshProUGUI>().text = map.mapName;
-            btn.GetComponent<Button>().onClick.AddListener(() => {
-                MapManager.instance.ChangeMap(map.mapName);
-            });
-            btn.GetComponent<MapButton>().onPointerEnterEvent.AddListener(() =>
+            if (!maps.ContainsKey(map.mapName))
             {
-                MapManager.instance.previewImage.sprite = map.mapSprite;
-                MapManager.instance.previewText.text = map.mapName;
-            });
 
+                maps.Add(map.mapName, map);
+            }
+            if (!connectMapsDictionary.ContainsKey(currentMap.mapName))
+            {
+                connectMapsDictionary.Add(currentMap.mapName, new List<string>());
+            }
+            if (!connectMapsDictionary.ContainsKey(map.mapName))
+            {
+                connectMapsDictionary.Add(map.mapName, new List<string>());
+            }
+            if (!connectMapsDictionary[currentMap.mapName].Contains(map.mapName))
+            {
+                connectMapsDictionary[currentMap.mapName].Add(map.mapName);
+            }
+            if (!connectMapsDictionary[map.mapName].Contains(currentMap.mapName))
+            {
+
+                connectMapsDictionary[map.mapName].Add(currentMap.mapName);
+            }
+
+            if (!mapButtons.ContainsKey(map.mapName))
+            { 
+                GameObject btn = Instantiate(mapButtonPrefab, mapButtonParent);
+                btn.GetComponent<MapButton>().Initialize();
+                btn.GetComponentInChildren<TextMeshProUGUI>().text = map.mapName;
+                btn.GetComponent<Button>().onClick.AddListener(() => {
+                    MapManager.instance.ChangeMap(map.mapName);
+                });
+                btn.GetComponent<MapButton>().onPointerEnterEvent.AddListener(() =>
+                {
+                    MapManager.instance.previewImage.sprite = map.mapSprite;
+                    MapManager.instance.previewText.text = map.mapName;
+                });
+                mapButtons.Add(map.mapName, btn.GetComponent<Button>());
+
+            }
         }
+        else
+        {
+            if (!maps.ContainsKey(map.mapName))
+            {
+
+                maps.Add(map.mapName, map);
+            }
+            if (!connectMapsDictionary.ContainsKey(targetName))
+            {
+                connectMapsDictionary.Add(targetName, new List<string>());
+            }
+            if (!connectMapsDictionary.ContainsKey(map.mapName))
+            {
+                connectMapsDictionary.Add(map.mapName, new List<string>());
+            }
+            if (!connectMapsDictionary[targetName].Contains(map.mapName))
+            {
+                connectMapsDictionary[targetName].Add(map.mapName);
+            }
+            if (!connectMapsDictionary[map.mapName].Contains(targetName))
+            {
+
+                connectMapsDictionary[map.mapName].Add(targetName);
+            }
+            if(!mapButtons.ContainsKey(map.mapName))
+            {
+                GameObject btn = Instantiate(mapButtonPrefab, mapButtonParent);
+                btn.GetComponent<MapButton>().Initialize();
+                btn.GetComponentInChildren<TextMeshProUGUI>().text = map.mapName;
+                btn.GetComponent<Button>().onClick.AddListener(() => {
+                    MapManager.instance.ChangeMap(map.mapName);
+                });
+                btn.GetComponent<MapButton>().onPointerEnterEvent.AddListener(() =>
+                {
+                    MapManager.instance.previewImage.sprite = map.mapSprite;
+                    MapManager.instance.previewText.text = map.mapName;
+                });
+                mapButtons.Add(map.mapName, btn.GetComponent<Button>());
+
+            }
+        }
+
+        
     }
 
     public void PlaceCharacter(string imageKey, string commentKey)
@@ -108,6 +188,7 @@ public class MapManager : MonoBehaviour
     }
     public void ChangeMap(string mapName)
     {
+        if (currentMap.mapName == mapName) return;
         if (mapSODict.ContainsKey(mapName))
         {
             foreach(var v in testamentsDictionary)
@@ -116,35 +197,71 @@ public class MapManager : MonoBehaviour
                 {
                     Debug.Log(v.Value.gameObject.name);
                     v.Value.SetActive(false);
+                    Debug.Log(v.Value.activeSelf);
                 }
             }
-            currentMap = mapSODict[mapName];
-            backGround.sprite = currentMap.mapSprite;
-            Debug.Log(currentMap.enterEvt);
-            currentMap.enterEvt?.Invoke();
-            currentMap.enterEvt = new UnityEvent() ;
-            foreach(GameObject obj in currentMap.testaments)
+            changeEffect.evt.AddListener(() =>
             {
-                if(testamentsDictionary.ContainsKey(obj.name))
+                currentMap = mapSODict[mapName];
+                Debug.Log(currentMap.mapName);
+                Debug.Log(mapName);
+                backGround.sprite = currentMap.mapSprite;
+                Debug.Log(currentMap.enterEvt);
+                currentMap.enterEvt?.Invoke();
+                currentMap.enterEvt = new UnityEvent();
+                foreach (GameObject obj in currentMap.testaments)
                 {
-                    testamentsDictionary[obj.name].SetActive(true);
-                }else
-                {
-                    GameObject testa = Instantiate(obj,testamentParent);
-                    testa.name = obj.name;
-                    testa.transform.localScale = obj.transform.localScale;
-                    testamentsDictionary.Add(obj.name, testa);
-                    //testa.GetComponent<TestamentItem>().Initialize();
+                    if (testamentsDictionary.ContainsKey(obj.name))
+                    {
+                        testamentsDictionary[obj.name].SetActive(true);
+                    }
+                    else
+                    {
+                        GameObject testa = Instantiate(obj, testamentParent);
+                        testa.name = obj.name;
+                        testa.transform.localScale = obj.transform.localScale;
+                        testamentsDictionary.Add(obj.name, testa);
+                        testa.GetComponent<TestamentItem>().Initialize();
+                    }
                 }
-            }
-            placedCharacter.Load();
+                placedCharacter.Load();
+            });
+                changeEffect.OnEffect();
         }
         SetMapScreen(false);
     }
     public void SetMapScreen(bool val)
     {
         mapPanel.SetActive(val);
+        foreach(var v in mapButtons)
+        {
+            GameObject obj = v.Value.gameObject;
+            if(!connectMapsDictionary.ContainsKey(currentMap.mapName))
+            {
+                connectMapsDictionary.Add(currentMap.mapName, new List<string>());
+            }
+            if(connectMapsDictionary[currentMap.mapName].Contains(obj.GetComponentInChildren<TextMeshProUGUI>().text) )
+            {
+                obj.gameObject.SetActive(true);
+            }else
+            {
+                obj.gameObject.SetActive(false);
+            }
+        }
         previewImage.sprite = currentMap.mapSprite;
         previewText.text = currentMap.mapName;
+    }
+    public void LockMap(string targetMap, string target2Map)
+    {
+        if(maps.ContainsKey(targetMap))
+        {
+            if(connectMapsDictionary.ContainsKey(targetMap))
+            {
+                if (connectMapsDictionary[targetMap].Contains(target2Map))
+                {
+                    connectMapsDictionary[targetMap].Remove(target2Map);
+                }
+            }
+        }
     }
 }

@@ -22,16 +22,16 @@ public class Test : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
 
-            seq.Restart();
+        //    seq.Restart();
 
-            if (!b)
-            {
-                Debug.Log(seq.IsActive());
-            }
+        //    if (!b)
+        //    {
+        //        Debug.Log(seq.IsActive());
+        //    }
 
-        }
+        //}
     }
 }

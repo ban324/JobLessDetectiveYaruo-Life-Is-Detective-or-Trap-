@@ -57,44 +57,51 @@ public class TalkEventManager : MonoBehaviour
                     MapManager.instance.PlaceCharacter("야라나이오", "8");
                 }
                 break;
-            case "8-1":
-                {
-                    Debug.LogError("8-1번 발동");
-                    MapManager.instance.PlaceCharacter("야라나이오", "8");
-                }
-                break;
-            case "9":
+            case "10":
                 {
                     Debug.LogError("9번 발동");
                     MapManager.instance.PlaceCharacter("야라나이오", "8");
                 }
                 break;
-            case "10":
-                {
-                    Debug.LogError("10번 발동");
-                    MapManager.instance.PlaceCharacter("야라나이오", "10");
-                }
-                break;
             case "11":
                 {
-                    MapManager.instance.PlaceCharacter("야라나이오", "10");
+                    Debug.LogError("10번 발동");
+                    MapManager.instance.PlaceCharacter("야라나이오", "11");
                 }
                 break;
             case "12":
                 {
-                    MapManager.instance.PlaceCharacter("야라나이오", "12");
+                    MapManager.instance.PlaceCharacter("야라나이오", "11");
                 }
                 break;
             case "13":
                 {
-                    MapManager.instance.PlaceCharacter("야라나이오", "12");
+                    MapManager.instance.PlaceCharacter("야라나이오", "13");
+                }
+                break;
+            case "14":
+                {
+                    MapManager.instance.PlaceCharacter("야라나이오", "13");
                 }
                 break;
             case "15":
                 {
                     MapManager.instance.AddEnterEvent("사무소", () =>
                     {
-                        TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment("15"));
+                        TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment("16"));
+                    });
+                }
+                break;
+            case "16":
+                {
+                    MapManager.instance.AddEnterEvent("프롤로그끝", () =>
+                    {
+                        PopupManager.instance.ClosePopup();
+                        TextManager.instance.state = TalkState.none;
+                        TextManager.instance.blur.Play(false);
+                        TextManager.instance.SetBoxActive(false);
+
+
                     });
                 }
                 break;
@@ -120,12 +127,12 @@ public class TalkEventManager : MonoBehaviour
                 break;
             case "10":
                 {
-                    MapManager.instance.PlaceCharacter("야라나이오", "10");
+                    MapManager.instance.PlaceCharacter("야라나이오", "8");
                 }
                 break;
             case "11":
                 {
-                    MapManager.instance.PlaceCharacter("야라나이오", "10");
+                    MapManager.instance.PlaceCharacter("야라나이오", "11 ");
                 }
                 break;
             case "12":
@@ -135,15 +142,20 @@ public class TalkEventManager : MonoBehaviour
                 break;
             case "13":
                 {
-                    MapManager.instance.PlaceCharacter("야라나이오", "12");
+                    MapManager.instance.PlaceCharacter("야라나이오", "13");
                 }
                 break;
             case "15":
                 {
                     MapManager.instance.AddEnterEvent("사무소", () =>
                     {
-                        TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment("15"));
+                        TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment("16"));
                     });
+                }
+                break;
+            case "16":
+                {
+                    MapManager.instance.ChangeMap("프롤로그끝");
                 }
                 break;
             default:

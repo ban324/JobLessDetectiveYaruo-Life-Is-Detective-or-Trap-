@@ -29,9 +29,9 @@ public class PointOutEffect : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            Proposal();
-        }
+        //if(Input.GetKeyDown(KeyCode.K))
+        //{
+        //    Proposal();
+        //}
     }
 }

@@ -16,17 +16,13 @@ public class PopupManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        Debug.Log("LoadStart");
         cgSOs=  new Dictionary<string,TestamentCGSO>();
-        Debug.Log("Dictionary Created");
         Debug.Log(cgSOList.Count);
         foreach(var c in cgSOList)
         {
             Debug.Log(c.idx.ToString());
             cgSOs.Add(c.idx.ToString(), c);
         }
-        Debug.Log("SO Added");
-        Debug.Log("LoadEnd");
     }
     public void OpenItem(string key)
     {

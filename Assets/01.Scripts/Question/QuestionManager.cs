@@ -3,7 +3,6 @@ using Febucci.UI.Actions;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,10 +36,10 @@ public class QuestionManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.U))
-        {
-            Question("0");
-        }
+        //if(Input.GetKeyDown(KeyCode.U))
+        //{
+        //    Question("0");
+        //}
     }
     public void Question(string questionKey)
     {
@@ -83,22 +82,18 @@ public class QuestionManager : MonoBehaviour
                 {
                     btn.onClick.AddListener(() =>
                     {
-                        Debug.LogError("잘찍었구나");
                         closeSeq.Restart();
                         TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(so.rightTogo));
                     });
-                    Debug.Log("Right = " + i + " " + so.rightTogo);
 
                 }else
                 {
 
                     btn.onClick.AddListener(() =>
                     {
-                        Debug.LogError("잘못된 버튼을 눌렀다 애송이");
                         closeSeq.Restart();
                         TextManager.instance.TryOpenTalk(CommentDatabase.instance.GetComment(so.wrongTogo));
                     });
-                    Debug.Log("wrong = " + i + " " + so.wrongTogo);
                 }
             }
         }
