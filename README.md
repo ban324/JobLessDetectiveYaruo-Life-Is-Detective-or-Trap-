@@ -1,7 +1,7 @@
 <div align="center">
 
 # 괴짜 탐정 야루오
-### ~인생은 탐정 아니면 함정
+### ~인생은 탐정 아니면 함정~
 
 [**다운로드 바로가기**]([https://drive.google.com/file/d/1WJahNkOlYfkfCPFyd9jfuT0QUd1mSMPd/view?usp=sharing](https://drive.google.com/file/d/1enxRlQ1Z2qI_g0tplVDNytjug9NmIype/view?usp=sharing))
 
@@ -13,7 +13,7 @@
 
 ## 조작 방법
 
-<img src="ReadmeResource/movement.gif" 
+<img src="ForReadMe/Control.jpg">
 
 
 
